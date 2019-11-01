@@ -8,18 +8,18 @@ public class ColorData : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] Color _playerColor = Color.white;
-    Color PlayerColor { get => _playerColor; }
+    public Color PlayerColor { get => _playerColor; }
 
     [Header("Obstacles")]
     [SerializeField] Color _wallColor = Color.white;
-    Color WallColor { get => _wallColor; }
+    public Color WallColor { get => _wallColor; }
 
     [Header("Attacks")]
     [SerializeField] Color _attackColor = Color.white;
-    Color AttackColor { get => _attackColor; }
+    public Color AttackColor { get => _attackColor; }
 
     [SerializeField] Color _monitorColor = Color.white;
-    Color MonitorColor { get => _monitorColor; }
+    public Color MonitorColor { get => _monitorColor; }
 
 
 
