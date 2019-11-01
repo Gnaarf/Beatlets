@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class ColorData : MonoBehaviour
 {
-    public static ColorData Instance;
+    static ColorData Instance;
 
     [Header("Player")]
     [SerializeField] Color _playerColor = Color.white;
-    public Color PlayerColor { get => _playerColor; }
+    public static Color PlayerColor { get => Instance._playerColor; }
 
     [Header("Obstacles")]
     [SerializeField] Color _wallColor = Color.white;
-    public Color WallColor { get => _wallColor; }
+    public static Color WallColor { get => Instance._wallColor; }
 
     [Header("Attacks")]
     [SerializeField] Color _attackColor = Color.white;
-    public Color AttackColor { get => _attackColor; }
+    public static Color AttackColor { get => Instance._attackColor; }
 
     [SerializeField] Color _monitorColor = Color.white;
-    public Color MonitorColor { get => _monitorColor; }
-
-
+    public static Color MonitorColor { get => Instance._monitorColor; }
+    
 
     private void Awake()
     {
