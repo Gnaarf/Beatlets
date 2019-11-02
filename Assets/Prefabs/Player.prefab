@@ -103,7 +103,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2411825006950625078}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -147,7 +147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d4da9589d4cc3fa40a0f4d1ff1dfaa44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed0ad8e7a820d6340863fb0a3b74bdad, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d4da9589d4cc3fa40a0f4d1ff1dfaa44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed0ad8e7a820d6340863fb0a3b74bdad, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -344,6 +344,7 @@ MonoBehaviour:
   _idleSpriteRef: {fileID: 2411825006040574290}
   _moveSpriteRef: {fileID: 2411825006950625077}
   _dashSpriteRef: {fileID: 2411825007002049411}
+  _transitionDuration: 0.1
 --- !u!114 &7563632224178245350
 MonoBehaviour:
   m_ObjectHideFlags: 0

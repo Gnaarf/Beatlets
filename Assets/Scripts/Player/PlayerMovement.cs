@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         Idle,
         Move,
         Dash,
+        None,
     }
 
     private float GetCurrentSpeed()
@@ -55,6 +56,11 @@ public class PlayerMovement : MonoBehaviour
         CurrentMovement = GetCurrentSpeed() * movementInput * Time.fixedDeltaTime;
         transform.position += CurrentMovement;
 
+        // rotations
+        if (movementInput.sqrMagnitude > float.Epsilon)
+        {
+            transform.up = Vector3.Lerp(transform.up, movementInput, 0.8f);
+        }
     }
 
     private void UpdateState(float timeSinceLastDashActivation, Vector2 movementVector)
