@@ -90,8 +90,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (collider.tag == "Wall")
         {
-            Vector3 closestPoint = collider.ClosestPoint(transform.position);
             transform.position -= CurrentMovement;
+            Vector3 closestPoint = collider.ClosestPoint(transform.position);
             transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
         }
     }

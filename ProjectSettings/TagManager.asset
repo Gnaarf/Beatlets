@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Attack
   - Wall
+  - Coin
   layers:
   - Default
   - TransparentFX
