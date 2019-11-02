@@ -11,8 +11,8 @@ public class CMeteorBehave : MonoBehaviour
     [SerializeField] float warnAnimate = 1.5f;
     [SerializeField] float warnEnd = 0.5f;
     [SerializeField] float attackEnd = -0.5f;
-    [SerializeField] AnimationCurve warnOut;
-    [SerializeField] AnimationCurve attackIn;
+    [SerializeField] AnimationCurve warnOut = default;
+    [SerializeField] AnimationCurve attackIn = default;
     
     // Start is called before the first frame update
     void Start()

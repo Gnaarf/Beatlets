@@ -10,7 +10,7 @@ public class MetronomeBehave : MonoBehaviour
     [SerializeField,ReadOnly] int xbeat;
     [SerializeField,ReadOnly] int beat;
     public List<IOnCheckBeat> beatListeners = new List<IOnCheckBeat>();
-    public bool go=false;
+    public bool go=true;
     void Awake(){
         startTime = 0;
     }
@@ -22,15 +22,14 @@ public class MetronomeBehave : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (go) { go= false ;Go();}
+        if (go) { go=false ;Go();}
         
         int nextxbeat = Mathf.RoundToInt(Mathf.Floor((Time.fixedTime-startTime)/60*(float)BPM*16));
         if(nextxbeat > xbeat){
             xbeat = nextxbeat;
             beat = xbeat / 4;
-            int c = xbeat % 16; 
             foreach(IOnCheckBeat l in beatListeners){
-                l.OnCheckBeat(c,16);
+                l.OnCheckBeat(xbeat,16);
             }
         }
         
