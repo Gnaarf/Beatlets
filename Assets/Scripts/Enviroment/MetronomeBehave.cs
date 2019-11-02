@@ -17,13 +17,12 @@ public class MetronomeBehave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         Go();
+        go = true;
     }
     
     void FixedUpdate()
     {
         if (go) { go= false ;Go();}
-        if (startTime == 0) return;
         
         int nextxbeat = Mathf.RoundToInt(Mathf.Floor((Time.fixedTime-startTime)/60*(float)BPM*16));
         if(nextxbeat > xbeat){
@@ -37,6 +36,7 @@ public class MetronomeBehave : MonoBehaviour
         
     }
     void Go(){
+        print("GO - previous StartTime: " + startTime + ", new StartTime: " + Time.fixedTime);
         xbeat=0;
         startTime=Time.fixedTime;
     }
