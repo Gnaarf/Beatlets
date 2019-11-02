@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     
     public MovementState CurrentState { get; private set; } 
 
+    public Vector3 CurrentMovement { get; private set; }
+
     private float DashSpeed => _dashDistance / _dashDuration;
 
     private float _lastDashActivationTime = float.MinValue;
@@ -35,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
                 return DashSpeed;
         }
     }
-        private void FixedUpdate()
+    private void FixedUpdate()
     {
         // update dash stuff
         float timeSinceLastDashActivation = Time.time - _lastDashActivationTime;
@@ -46,17 +48,13 @@ public class PlayerMovement : MonoBehaviour
         CurrentState = timeSinceLastDashActivation < _dashDuration ? MovementState.Dash : CurrentState;
 
         // actual movement
-        Vector2 movementInput = GetCurrentMovementInput();
+        Vector2 movementInput = Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.up;
 
         UpdateState(timeSinceLastDashActivation, movementInput);
 
-        transform.position += (Vector3)(GetCurrentSpeed() * movementInput * Time.fixedDeltaTime);
+        CurrentMovement = GetCurrentSpeed() * movementInput * Time.fixedDeltaTime;
+        transform.position += CurrentMovement;
 
-    }
-
-    private static Vector3 GetCurrentMovementInput()
-    {
-        return Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.up;
     }
 
     private void UpdateState(float timeSinceLastDashActivation, Vector2 movementVector)
@@ -87,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         if (collider.tag == "Wall")
         {
             Vector3 closestPoint = collider.ClosestPoint(transform.position);
-            transform.position -= (Vector3)(GetCurrentSpeed() * GetCurrentMovementInput() * Time.fixedDeltaTime);
+            transform.position -= CurrentMovement;
             transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
         }
     }
