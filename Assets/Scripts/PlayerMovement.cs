@@ -83,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("yolo, bro");
         Vector3 closestPoint = collision.ClosestPoint(transform.position);
         transform.position -= (Vector3)(GetCurrentSpeed() * GetCurrentMovementInput() * Time.fixedDeltaTime);
         transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
