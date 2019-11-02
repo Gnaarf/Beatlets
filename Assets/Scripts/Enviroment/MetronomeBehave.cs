@@ -36,7 +36,7 @@ public class MetronomeBehave : MonoBehaviour
         }
         
     }
-    void Go(){
+    public void Go(){
         xbeat=0;
         startTime=Time.fixedTime;
     }
