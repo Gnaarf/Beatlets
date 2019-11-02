@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeatBoxBehave : MonoBehaviour
+public class BeatBoxBehave : MonoBehaviour, IOnBeat
 {
     [SerializeField,Range(-1,1)]
     float rspeed = .5F;
@@ -10,6 +10,7 @@ public class BeatBoxBehave : MonoBehaviour
     [SerializeField]
     GameObject meteorPrefab;
     
+    bool onBeat = true; 
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,15 @@ public class BeatBoxBehave : MonoBehaviour
                 b.transform.position= center + new Vector3(Random.Range(-2f,2f), Random.Range(-2f,2f),0);
             }
         }
+        if(onBeat){
+            transform.localScale = Vector3.one *1.3f;
+        }else{
+            transform.localScale = Vector3.one;
+        }
+        
+    }
+    public void OnBeat(){
+        onBeat = !onBeat; 
     }
     
 }
