@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537cfc23a67422c338f8aa1b0fdc16fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countDown: 4
+  countDown: 3.5
   size: 10
   warnBeginn: 3
   warnAnimate: 1
