@@ -19,6 +19,7 @@ public class CMeteorBehave : MonoBehaviour
     {
         var renderer = GetComponent<SpriteRenderer>();
         renderer.color = new Color(1,1,1,0);
+        GetComponent<Collider2D>().enabled = false;
     }
 
     // Update is called once per frame
@@ -28,13 +29,16 @@ public class CMeteorBehave : MonoBehaviour
         var renderer = GetComponent<SpriteRenderer>();
         var s = 1.0f;
         if ( countDown < warnBeginn && countDown > warnAnimate){
-            //Monitor
+            // Monitor
             renderer.color = ColorData.MonitorColor;
         } else if ( countDown < warnAnimate && countDown > warnEnd){
+            // Monitor shrink
             renderer.color = ColorData.MonitorColor;
             s = (countDown - warnEnd) / (warnAnimate - warnEnd);
             s = warnOut.Evaluate(s);
         } else if ( countDown < warnEnd && countDown > 0.0f) {
+            // attack expand
+            GetComponent<Collider2D>().enabled = true;
             s = 1-countDown/warnEnd;
             s = attackIn.Evaluate(s);
             renderer.color = Color.Lerp(ColorData.MonitorColor * new Color(1,1,1,s),ColorData.AttackColor,s);
