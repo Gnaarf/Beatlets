@@ -250,9 +250,10 @@ GameObject:
   - component: {fileID: 2411825007660165896}
   - component: {fileID: 2411825007660165900}
   - component: {fileID: 2411825007660165899}
+  - component: {fileID: 7563632224178245350}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,12 +321,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2411825007660165901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ebd6045b20a5e648a145160834a5500, type: 3}
+  m_Script: {fileID: 11500000, guid: 657070cbca60e1543917fee91c103362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
   _dashDistance: 4
-  _dashDuration: 0.2
+  _dashDuration: 0.1
   _dashCoolDown: 1
 --- !u!114 &2411825007660165899
 MonoBehaviour:
@@ -336,9 +337,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2411825007660165901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f827e1acd3b07334d8dea73d244f8bcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a53daeaa257c484186b5b75fa54c219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _idleSpriteRef: {fileID: 2411825006040574290}
   _moveSpriteRef: {fileID: 2411825006950625077}
   _dashSpriteRef: {fileID: 2411825007002049411}
+--- !u!114 &7563632224178245350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411825007660165901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d2b7c70dd83dd45b62d47a60c112e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

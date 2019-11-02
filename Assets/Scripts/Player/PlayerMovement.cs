@@ -75,16 +75,29 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector3 closestPoint = collision.ClosestPoint(transform.position);
-        transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
+        print("Player: onCollisionEnter: " + collision.otherCollider.name);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Vector3 closestPoint = collision.ClosestPoint(transform.position);
-        transform.position -= (Vector3)(GetCurrentSpeed() * GetCurrentMovementInput() * Time.fixedDeltaTime);
-        transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
+        print("Player: onTriggerEnter: " + collider.name);
+
+        if (collider.tag == "Wall")
+        {
+            Vector3 closestPoint = collider.ClosestPoint(transform.position);
+            transform.position -= (Vector3)(GetCurrentSpeed() * GetCurrentMovementInput() * Time.fixedDeltaTime);
+            transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.tag == "Wall")
+        {
+            Vector3 closestPoint = collider.ClosestPoint(transform.position);
+            transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
+        }
     }
 }
