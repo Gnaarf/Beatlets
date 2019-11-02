@@ -7,8 +7,14 @@ public class ColorData : MonoBehaviour
     static ColorData Instance;
 
     [Header("Player")]
-    [SerializeField] Color _playerColor = Color.white;
-    public static Color PlayerColor { get => Instance._playerColor; }
+    [SerializeField] Color _playerDefaultColor = Color.white;
+    public static Color PlayerDefaultColor { get => Instance._playerDefaultColor; }
+
+    [SerializeField] Color _playerMoveColor = Color.white;
+    public static Color PlayerMoveColor { get => Instance._playerMoveColor; }
+
+    [SerializeField] Color _playerDashColor = Color.white;
+    public static Color PlayerDashColor { get => Instance._playerDashColor; }
 
     [Header("Obstacles")]
     [SerializeField] Color _wallColor = Color.white;

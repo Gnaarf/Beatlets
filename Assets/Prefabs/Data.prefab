@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24dfcbbb32b22149a84b9f4f19b6038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  _playerDefaultColor: {r: 0, g: 0.5788393, b: 1, a: 1}
+  _playerMoveColor: {r: 0, g: 0.4310677, b: 1, a: 1}
+  _playerDashColor: {r: 0, g: 0.2805748, b: 1, a: 1}
   _wallColor: {r: 1, g: 0.8128175, b: 0.24056602, a: 1}
   _attackColor: {r: 1, g: 0.2783019, b: 0.2783019, a: 1}
   _monitorColor: {r: 1, g: 0.2784314, b: 0.2784314, a: 0.3529412}
