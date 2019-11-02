@@ -6,20 +6,26 @@ public class MetronomeBehave : MonoBehaviour
 {
     [SerializeField,Range(30,240)]
     int BPM = 140;
-    float startTime;
+    float startTime = 0;
     [SerializeField,ReadOnly] int xbeat;
     [SerializeField,ReadOnly] int beat;
     public List<IOnCheckBeat> beatListeners = new List<IOnCheckBeat>();
-    
+    public bool go=false;
+    void Awake(){
+        startTime = 0;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+         Go();
     }
     
     void FixedUpdate()
     {
-        int nextxbeat = Mathf.RoundToInt(Mathf.Floor(Time.fixedTime/60*(float)BPM*16));
+        if (go) { go= false ;Go();}
+        if (startTime == 0) return;
+        
+        int nextxbeat = Mathf.RoundToInt(Mathf.Floor((Time.fixedTime-startTime)/60*(float)BPM*16));
         if(nextxbeat > xbeat){
             xbeat = nextxbeat;
             beat = xbeat / 4;
@@ -27,11 +33,11 @@ public class MetronomeBehave : MonoBehaviour
             foreach(IOnCheckBeat l in beatListeners){
                 l.OnCheckBeat(c,16);
             }
-            print("BEAT");
         }
         
     }
     void Go(){
-        
+        xbeat=0;
+        startTime=Time.fixedTime;
     }
 }

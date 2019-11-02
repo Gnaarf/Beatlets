@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IOnBeat 
 {
-    void OnBeat(); 
+    void OnBeat(int c); 
     
     
 }
@@ -15,24 +15,45 @@ public interface IOnCheckBeat
 
 public class BeatListener : MonoBehaviour,IOnCheckBeat
 {
-    public int[] hits = {255,255,255,255
-                        ,255,255,255,255
-                        ,255,255,255,255
-                        ,255,255,255,255};
-    public int ground = 4;
+    public bool[] hits = new bool[16];
+    enum Style{
+        Halfs,
+        Fourths,
+        Eights,
+        Sixteenths
+    };
+    
+    
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        
         FindObjectOfType<MetronomeBehave>().beatListeners.Add(GetComponent<IOnCheckBeat>());
         //assing to list
     }
     public void OnCheckBeat(int c, int groundbeat){
-//         ic = groundbeat / ground 
-        
-        for(int i = 0; i < hits.Length &&
-            hits[i] <= c; i++){
-            if (c == hits[i])GetComponent<IOnBeat>().OnBeat();
-        }
+        if( hits[c]){GetComponent<IOnBeat>().OnBeat(c);}
     } 
+    
+    public void Halfs(){
+        for(int i = 0 ; i < hits.Length; i++){
+            hits[i]= (i % 8 == 0);
+        }
+    }
+    public void Fourths(){
+        for(int i = 0 ; i < hits.Length; i++){
+            hits[i]= (i % 4 == 0);
+        }
+    }
+    public void Eights(){
+        for(int i = 0 ; i < hits.Length; i++){
+            hits[i]= (i % 8 == 0);
+        }
+    }
+    public void Sixteenths(){
+        for(int i = 0 ; i < hits.Length; i++)
+            hits[i]= true;
+    }
+
     
 }

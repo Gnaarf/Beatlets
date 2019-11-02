@@ -11,6 +11,7 @@ public class BeatBoxBehave : MonoBehaviour, IOnBeat
     GameObject meteorPrefab;
     
     bool onBeat = true; 
+    int beat=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class BeatBoxBehave : MonoBehaviour, IOnBeat
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space) ){
             //singel metore default
             var meteor = Instantiate(meteorPrefab);
             var b = meteor.GetComponent<CMeteorBehave>();
@@ -49,8 +50,15 @@ public class BeatBoxBehave : MonoBehaviour, IOnBeat
         }
         
     }
-    public void OnBeat(){
-        onBeat = !onBeat; 
+    public void OnBeat(int c){
+        if ((c % 16) == 0){
+            onBeat = !onBeat; 
+//             var meteor = Instantiate(meteorPrefab);
+//             var b = meteor.GetComponent<CMeteorBehave>();
+//             b.transform.position= this.transform.position + gameObject.transform.up * Random.Range(1f,5f) ;
+//             
+        }
+
     }
     
 }
