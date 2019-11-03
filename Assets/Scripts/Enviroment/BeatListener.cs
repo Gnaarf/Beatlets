@@ -4,25 +4,25 @@ using UnityEngine;
 
 // struct BeatData{
 //     totalCount;
-//     
-//     
+//
+//
 // }
 
-public interface IOnBeat 
+public interface IOnBeat
 {
-    void OnBeat(int c); 
-    
-    
+    void OnBeat(int c);
+
+
 }
-public interface IOnBeat2 
+public interface IOnBeat2
 {
-    void OnBeat2(int c); 
-    
-    
+    void OnBeat2(int c);
+
+
 }
-public interface IOnCheckBeat 
+public interface IOnCheckBeat
 {
-    void OnCheckBeat(int c, int groundbeat); 
+    void OnCheckBeat(int c, int groundbeat);
 }
 
 public class BeatListener : MonoBehaviour,IOnCheckBeat
@@ -35,12 +35,12 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
         Eights,
         Sixteenths
     };
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
-    {   
-        
+    {
+
         FindObjectOfType<MetronomeBehave>().beatListeners.Add(GetComponent<IOnCheckBeat>());
         //assing to list
     }
@@ -49,17 +49,17 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
             foreach(IOnBeat o in GetComponents<IOnBeat>()){
                 o.OnBeat(c);
             }
-            
+
         }
         if( hits2[c % hits2.Length]){
             foreach(IOnBeat2 o in GetComponents<IOnBeat2>()){
                 o.OnBeat2(c);
-                
+
             }
         }
-        
-    } 
-    
+
+    }
+
     public void Halfs(){
         for(int i = 0 ; i < hits.Length; i++){
             hits[i] = (i % 8 == 0);
@@ -80,5 +80,9 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
             hits[i] = true;
     }
 
-    
+    void OnDestroy(){
+        FindObjectOfType<MetronomeBehave>().beatListeners.Remove(GetComponent<IOnCheckBeat>());
+    }
+
+
 }
