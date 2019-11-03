@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &135520566212315451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4919939974244548125}
+  - component: {fileID: 8918798056300666950}
+  m_Layer: 0
+  m_Name: Snow Valley
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4919939974244548125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135520566212315451}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5949925883884442529}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8918798056300666950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135520566212315451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24dfcbbb32b22149a84b9f4f19b6038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerDefaultColor: {r: 0.13333334, g: 0.69803923, b: 0.9176471, a: 1}
+  _playerMoveColor: {r: 0.13333334, g: 0.69803923, b: 0.9176471, a: 1}
+  _playerDashColor: {r: 1, g: 0.7237945, b: 0.5613208, a: 1}
+  _wallColor: {r: 0.8431373, g: 0.70980394, b: 0.6313726, a: 1}
+  _monitorColor: {r: 0.86666673, g: 0.9176471, b: 0.9333334, a: 0.45490196}
+  _attackColor: {r: 0.7122642, g: 0.93229747, b: 1, a: 1}
+  _backgroundFloor: {r: 0.54901963, g: 0.6745098, b: 0.81568635, a: 1}
+  _backgroundVoid: {r: 0.23073158, g: 0.39296222, b: 0.5754717, a: 1}
+  _textColor: {r: 1, g: 0.7254902, b: 0.56078434, a: 1}
+  _textColor2: {r: 0.8745099, g: 0.63529414, b: 0.4901961, a: 1}
 --- !u!1 &626284840428466383
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,7 +69,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5154601785398420690
 Transform:
   m_ObjectHideFlags: 0
@@ -53,6 +106,59 @@ MonoBehaviour:
   _backgroundVoid: {r: 0.6078474, g: 0.7075472, b: 0, a: 1}
   _textColor: {r: 1, g: 0, b: 1, a: 1}
   _textColor2: {r: 1, g: 0, b: 1, a: 1}
+--- !u!1 &3917251602138110869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1610645848325936820}
+  - component: {fileID: 4619606271204032968}
+  m_Layer: 0
+  m_Name: flower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1610645848325936820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3917251602138110869}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5949925883884442529}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4619606271204032968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3917251602138110869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24dfcbbb32b22149a84b9f4f19b6038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerDefaultColor: {r: 0.41176474, g: 0.058823533, b: 0.6784314, a: 1}
+  _playerMoveColor: {r: 0.41176474, g: 0.058823533, b: 0.6784314, a: 1}
+  _playerDashColor: {r: 0.8117648, g: 0.8431373, b: 0, a: 1}
+  _wallColor: {r: 0.5794811, g: 0.764151, b: 0, a: 1}
+  _monitorColor: {r: 0.73333335, g: 0.5372549, b: 0.92549026, a: 0.45490196}
+  _attackColor: {r: 0.6291138, g: 0.24056602, b: 1, a: 1}
+  _backgroundFloor: {r: 0.40784317, g: 0.5372549, b: 0, a: 1}
+  _backgroundVoid: {r: 0.13606942, g: 0.1792453, b: 0, a: 1}
+  _textColor: {r: 0.8117648, g: 0.8431373, b: 0, a: 1}
+  _textColor2: {r: 0.6812199, g: 0.7075472, b: 0, a: 1}
 --- !u!1 &5234484737245349918
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,6 +189,9 @@ Transform:
   m_Children:
   - {fileID: 5154601785398420690}
   - {fileID: 4806234293632531244}
+  - {fileID: 4919939974244548125}
+  - {fileID: 8160076383771571832}
+  - {fileID: 1610645848325936820}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedColorData: {fileID: 0}
-  _testData: {fileID: 0}
+  _testData: {fileID: 4619606271204032968}
 --- !u!1 &5771681172410822149
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,3 +262,56 @@ MonoBehaviour:
   _backgroundVoid: {r: 0, g: 0.7887413, b: 0.8018868, a: 1}
   _textColor: {r: 0, g: 0.5324261, b: 0.7264151, a: 1}
   _textColor2: {r: 0, g: 0.42304942, b: 0.5754717, a: 1}
+--- !u!1 &7017542540703362809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8160076383771571832}
+  - component: {fileID: 5284002898024993878}
+  m_Layer: 0
+  m_Name: watermelon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8160076383771571832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017542540703362809}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5949925883884442529}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5284002898024993878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017542540703362809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24dfcbbb32b22149a84b9f4f19b6038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerDefaultColor: {r: 0, g: 0.48235297, b: 0, a: 1}
+  _playerMoveColor: {r: 0, g: 0.48235297, b: 0, a: 1}
+  _playerDashColor: {r: 1, g: 0.8000001, b: 0.31764707, a: 1}
+  _wallColor: {r: 1, g: 0.54509807, b: 0.46274513, a: 1}
+  _monitorColor: {r: 1, g: 0.3726415, b: 0.37567216, a: 0.45490196}
+  _attackColor: {r: 1, g: 0.18823531, b: 0.19215688, a: 1}
+  _backgroundFloor: {r: 0.14117648, g: 0.87843144, b: 0.72156864, a: 1}
+  _backgroundVoid: {r: 0.06127626, g: 0.4811321, b: 0.39180106, a: 1}
+  _textColor: {r: 1, g: 0.8000001, b: 0.31764707, a: 1}
+  _textColor2: {r: 0.8745099, g: 0.69803923, b: 0.2784314, a: 1}
