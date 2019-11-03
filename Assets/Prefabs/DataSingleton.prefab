@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedColorData: {fileID: 0}
-  _testData: {fileID: 4619606271204032968}
+  _testData: {fileID: 0}
 --- !u!1 &5771681172410822149
 GameObject:
   m_ObjectHideFlags: 0
