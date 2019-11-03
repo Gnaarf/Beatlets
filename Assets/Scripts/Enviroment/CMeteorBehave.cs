@@ -30,10 +30,10 @@ public class CMeteorBehave : MonoBehaviour
         var s = 1.0f;
         if ( countDown < warnBeginn && countDown > warnAnimate){
             // Monitor
-            renderer.color = ColorData.MonitorColor;
+            renderer.color = ColorDataSingleton.Instance.MonitorColor;
         } else if ( countDown < warnAnimate && countDown > warnEnd){
             // Monitor shrink
-            renderer.color = ColorData.MonitorColor;
+            renderer.color = ColorDataSingleton.Instance.MonitorColor;
             s = (countDown - warnEnd) / (warnAnimate - warnEnd);
             s = warnOut.Evaluate(s);
         } else if ( countDown < warnEnd && countDown > 0.0f) {
@@ -41,7 +41,7 @@ public class CMeteorBehave : MonoBehaviour
             GetComponent<Collider2D>().enabled = true;
             s = 1-countDown/warnEnd;
             s = attackIn.Evaluate(s);
-            renderer.color = Color.Lerp(ColorData.MonitorColor * new Color(1,1,1,s),ColorData.AttackColor,s);
+            renderer.color = Color.Lerp(ColorDataSingleton.Instance.MonitorColor * new Color(1,1,1,s), ColorDataSingleton.Instance.AttackColor,s);
         } else if ( countDown < 0.0f && countDown > attackEnd){
             GetComponent<Collider2D>().enabled=true;
         } else if ( countDown < attackEnd ){
