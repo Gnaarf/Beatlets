@@ -15,18 +15,23 @@ public class GenMissile : MonoBehaviour, IOnBeat
 
     bool onBeat = false;
     bool measureStarted;
-    
+
     void OnEnable(){
         count = 32;
         measureStarted = false;
         clipController.SetActive(true);
     }
+
     // Update is called once per frame
-    
-    void FixedUpdate()
-    {
-        if( onBeat ){
-            onBeat = false;
+    public void OnBeat(int c){
+        if (measureStarted == false)
+        {
+            BeatListener beatListener = GetComponent<BeatListener>();
+            measureStarted = c % beatListener.hits.Length == 0;
+        }
+
+
+        if ( gameObject.activeInHierarchy && measureStarted){
             var missile = Instantiate(missilePrefab);
             var b = missile.GetComponent<MissileBehave>();
             b.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * 0.5f;
@@ -36,18 +41,7 @@ public class GenMissile : MonoBehaviour, IOnBeat
                 clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
+
         }
-    }
-    
-    public void OnBeat(int c){
-       if (measureStarted == false)
-       {
-            BeatListener beatListener = GetComponent<BeatListener>();
-            measureStarted = c % beatListener.hits.Length == 0;
-       }
-
-
-       if ( gameObject.activeInHierarchy && measureStarted) onBeat = true;
-        
     }
 }
