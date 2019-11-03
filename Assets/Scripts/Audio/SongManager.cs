@@ -19,13 +19,23 @@ public class SongManager : MonoBehaviour, IOnBeat
     [SerializeField]
     private int _maxLoop = 7;
 
+    [SerializeField]
+    AudioClip _startGameSound;
+    [SerializeField]
+    AudioClip _stopGameSound;
+
+    AudioSource _audioSource;
+
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         startPlaying();
     }
 
     private void startPlaying()
     {
+        _audioSource.clip = _startGameSound;
+        _audioSource.Play();
         _metronomeBehave.Go();
         _baseLine.SetActive(true);
 
@@ -51,6 +61,17 @@ public class SongManager : MonoBehaviour, IOnBeat
         }
         _lastBaseLineTime = _baseLine.AudioSource.time;
         */
+    }
+
+    public void StopPlaying()
+    {
+        _metronomeBehave.gameObject.SetActive(false);
+        foreach (ClipController clipController in _clipList)
+        {
+            clipController.Stop();
+        }
+        _audioSource.clip = _stopGameSound;
+        _audioSource.Stop();
     }
 
     public void OnBeat(int c)

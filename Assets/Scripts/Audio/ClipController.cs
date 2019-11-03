@@ -52,4 +52,9 @@ public class ClipController : MonoBehaviour
     {
         _isActive = !_isActive;
     }
+
+    public void Stop()
+    {
+        _audioSource.Stop();
+    }
 }
