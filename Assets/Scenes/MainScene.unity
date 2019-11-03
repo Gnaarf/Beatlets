@@ -317,6 +317,16 @@ PrefabInstance:
       propertyPath: clipController
       value: 
       objectReference: {fileID: 1297607390}
+    - target: {fileID: 8808405366837659003, guid: 21e62b519b45f482983b47ef69e1ee10,
+        type: 3}
+      propertyPath: beatBoxTransform
+      value: 
+      objectReference: {fileID: 1559866303}
+    - target: {fileID: 8808405366837659003, guid: 21e62b519b45f482983b47ef69e1ee10,
+        type: 3}
+      propertyPath: clipController
+      value: 
+      objectReference: {fileID: 1297607390}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e62b519b45f482983b47ef69e1ee10, type: 3}
 --- !u!1 &307026473 stripped
@@ -361,6 +371,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
+        type: 3}
+      propertyPath: _attackPatterns.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
+        type: 3}
+      propertyPath: _attackPatterns.Array.data[0]
+      value: 
+      objectReference: {fileID: 307026473}
+    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
+        type: 3}
+      propertyPath: _attackPatterns.Array.data[1]
+      value: 
+      objectReference: {fileID: 609238258}
+    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
+        type: 3}
+      propertyPath: _attackPatterns.Array.data[2]
+      value: 
+      objectReference: {fileID: 102828823}
+    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
+        type: 3}
+      propertyPath: _attackPatterns.Array.data[3]
+      value: 
+      objectReference: {fileID: 1279183364}
+    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
+        type: 3}
+      propertyPath: _attackPatterns.Array.data[4]
+      value: 
+      objectReference: {fileID: 2137974032}
     - target: {fileID: 1094025783280931106, guid: b11f0d1699aab1d4489223f036df8d08,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -416,36 +456,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
-        type: 3}
-      propertyPath: _attackPatterns.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
-        type: 3}
-      propertyPath: _attackPatterns.Array.data[0]
-      value: 
-      objectReference: {fileID: 307026473}
-    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
-        type: 3}
-      propertyPath: _attackPatterns.Array.data[1]
-      value: 
-      objectReference: {fileID: 609238258}
-    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
-        type: 3}
-      propertyPath: _attackPatterns.Array.data[2]
-      value: 
-      objectReference: {fileID: 102828823}
-    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
-        type: 3}
-      propertyPath: _attackPatterns.Array.data[3]
-      value: 
-      objectReference: {fileID: 1279183364}
-    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
-        type: 3}
-      propertyPath: _attackPatterns.Array.data[4]
-      value: 
-      objectReference: {fileID: 2137974032}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b11f0d1699aab1d4489223f036df8d08, type: 3}
 --- !u!114 &476243922 stripped
@@ -2822,11 +2832,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena
       objectReference: {fileID: 0}
-    - target: {fileID: 832567308030117416, guid: 797043ff41581584798ecb4a1f6c4d89,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 156452937877469680, guid: 797043ff41581584798ecb4a1f6c4d89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2881,6 +2886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832567308030117416, guid: 797043ff41581584798ecb4a1f6c4d89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6184693124783579509, guid: 797043ff41581584798ecb4a1f6c4d89,
         type: 3}
@@ -3059,13 +3069,13 @@ PrefabInstance:
       propertyPath: _songManager
       value: 
       objectReference: {fileID: 1619219426}
-    - target: {fileID: 1641595964, guid: a3593ebad76d60645a806e8979482f43, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1641595969, guid: a3593ebad76d60645a806e8979482f43, type: 3}
       propertyPath: _scoreText
       value: 
       objectReference: {fileID: 1953245680}
+    - target: {fileID: 1641595964, guid: a3593ebad76d60645a806e8979482f43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3593ebad76d60645a806e8979482f43, type: 3}

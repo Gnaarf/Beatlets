@@ -7,7 +7,7 @@ public class GenLasor : MonoBehaviour, IOnBeat
     [SerializeField] GameObject lasorPrefab= default;
     [SerializeField] Transform beatBoxTransform= default;
     [SerializeField] ClipController clipController = default;
-    
+
     bool measureStarted;
     int count;
 
@@ -16,17 +16,17 @@ public class GenLasor : MonoBehaviour, IOnBeat
         measureStarted = false;
         clipController.SetActive(true);
     }
-    
+
     public void OnBeat(int c){
         if (measureStarted == false)
         {
             BeatListener beatListener = GetComponent<BeatListener>();
             measureStarted = c % beatListener.hits.Length == 0;
         }
-        
-        
+
+
         if ( gameObject.activeInHierarchy && measureStarted) {
-            if ( --count == 0 ) {
+            if ( --count <= 0 ) {
                 clipController.SetActive(false);
                 gameObject.SetActive(false);
             }

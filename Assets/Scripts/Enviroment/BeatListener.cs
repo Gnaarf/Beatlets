@@ -85,7 +85,6 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
 
     void OnDestroy()
     {
-
         MetronomeBehave metronome = FindObjectOfType<MetronomeBehave>();
         if (metronome != null)
         {
