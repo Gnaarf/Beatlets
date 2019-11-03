@@ -105,8 +105,9 @@ GameObject:
   - component: {fileID: 6874937965940881816}
   - component: {fileID: 6184693124783579509}
   - component: {fileID: 8873355866565550637}
+  - component: {fileID: 2576603758714642164}
   m_Layer: 0
-  m_Name: Schallplatte
+  m_Name: vinyl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +163,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 5e67e51c25a92c44d886e59f77741771, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -246,6 +247,19 @@ MonoBehaviour:
     m_RotationOrder: 4
   _maxRotationSpeed: 360
   _animationDuration: 4
+--- !u!114 &2576603758714642164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832567308030117416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 6
 --- !u!1 &3453698058840921819
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +315,7 @@ GameObject:
   - component: {fileID: 3661686423252343513}
   - component: {fileID: 6628779770242644259}
   - component: {fileID: 4475953416443299746}
+  - component: {fileID: 2986696503343885503}
   m_Layer: 0
   m_Name: GrowAnimationSprite
   m_TagString: Untagged
@@ -423,6 +438,20 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2986696503343885503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652449069667121660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a535bb42f1bc51b439589e6433e269cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color1: 6
+  color2: 7
 --- !u!1 &5434762405738245440
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2978897135127335551}
   - component: {fileID: 8307740653280965599}
-  - component: {fileID: 156452938024308058}
+  - component: {fileID: 2805875220005794335}
   m_Layer: 0
   m_Name: BaseSprite
   m_TagString: Untagged
@@ -493,7 +522,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: d4da9589d4cc3fa40a0f4d1ff1dfaa44, type: 3}
-  m_Color: {r: 0.5803922, g: 0.8784314, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -503,7 +532,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &156452938024308058
+--- !u!114 &2805875220005794335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -512,7 +541,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5434762405738245440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65a1754d2a42104caf04065108992ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: 6

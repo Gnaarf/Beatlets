@@ -17,6 +17,7 @@ public class SpinAndFadeOffAnimation : MonoBehaviour
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer.sortingLayerName = "Foreground";
     }
 
     // Update is called once per frame
