@@ -7,6 +7,9 @@ public class CoinPositioning : MonoBehaviour
     [SerializeField] float _spawnRadius = 50f;
     [SerializeField] float _minDistanceToLastPosition = 5f;
 
+    [SerializeField]
+    SoundEffectControl _soundEffectControl; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,7 @@ public class CoinPositioning : MonoBehaviour
         if(collider.tag == "Player")
         {
             ResetToRandomPosition(true);
+            _soundEffectControl.Play();
         }
     }
 

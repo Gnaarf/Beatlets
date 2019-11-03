@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _dashDistance = 4f;
     [SerializeField] float _dashDuration = 0.2f;
     [SerializeField] float _dashCoolDown = 1f;
+
+    [SerializeField]
+    SoundEffectControl _dashEffect;
     
     public MovementState CurrentState { get; private set; } 
 
@@ -45,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxis("Jump") > 0f && timeSinceLastDashActivation > _dashCoolDown)
         {
             _lastDashActivationTime = Time.time;
+            _dashEffect.Play();
         }
         CurrentState = timeSinceLastDashActivation < _dashDuration ? MovementState.Dash : CurrentState;
 
