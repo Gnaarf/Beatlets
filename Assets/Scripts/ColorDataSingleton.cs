@@ -43,7 +43,7 @@ public class ColorDataSingleton : MonoBehaviour
         switch (eColor)
         {
             case EColor.PlayerDefault:
-                return Instance.PlayerDashColor;
+                return Instance.PlayerDefaultColor;
             case EColor.PlayerMove:
                 return Instance.PlayerMoveColor;
             case EColor.PlayerDash:

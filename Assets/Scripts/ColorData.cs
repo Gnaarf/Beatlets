@@ -25,6 +25,7 @@ public class ColorData : MonoBehaviour
     [SerializeField] Color _playerMoveColor = Color.white;
     public Color PlayerMoveColor { get => _playerMoveColor; }
 
+    [Header("COIN!!!!")]
     [SerializeField] Color _playerDashColor = Color.white;
     public Color PlayerDashColor { get => _playerDashColor; }
 

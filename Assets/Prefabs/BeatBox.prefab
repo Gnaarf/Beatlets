@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 816174115180623347}
   - component: {fileID: 3575074369173802281}
+  - component: {fileID: 3307274580499046129}
   m_Layer: 0
-  m_Name: Outer
+  m_Name: circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +68,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 23
   m_Sprite: {fileID: 21300000, guid: d4da9589d4cc3fa40a0f4d1ff1dfaa44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -79,6 +80,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3307274580499046129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042377606378815777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 6
 --- !u!1 &3585862558309197554
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +106,7 @@ GameObject:
   - component: {fileID: 523359106579216904}
   - component: {fileID: 343643314635886030}
   - component: {fileID: 8735150427422024375}
+  - component: {fileID: 4483136886168661268}
   m_Layer: 0
   m_Name: BeatBox
   m_TagString: Wall
@@ -151,7 +166,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: ed0ad8e7a820d6340863fb0a3b74bdad, type: 3}
   m_Color: {r: 0, g: 0.78431374, b: 0, a: 1}
   m_FlipX: 0
@@ -213,6 +228,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4483136886168661268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585862558309197554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 3
 --- !u!1 &4480819228632650231
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +253,7 @@ GameObject:
   - component: {fileID: 6040538279521089}
   - component: {fileID: 27795734208828437}
   m_Layer: 0
-  m_Name: OuterCircle
+  m_Name: OuterRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +268,7 @@ Transform:
   m_GameObject: {fileID: 4480819228632650231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1609439990908842793}
   - {fileID: 2671298270245694604}
@@ -310,8 +338,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1609439990908842793}
   - component: {fileID: 1140572938323596334}
+  - component: {fileID: 6330595941470815191}
   m_Layer: 0
-  m_Name: Outer
+  m_Name: WhiteCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,7 +396,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 19
+  m_SortingOrder: 21
   m_Sprite: {fileID: 21300000, guid: d4da9589d4cc3fa40a0f4d1ff1dfaa44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -379,6 +408,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6330595941470815191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447303766690750798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 6
 --- !u!1 &7655901334734037548
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +433,7 @@ GameObject:
   - component: {fileID: 59833638544753620}
   - component: {fileID: 370552646625667448}
   m_Layer: 0
-  m_Name: InnerCircle
+  m_Name: InnerDot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11c84df0990ccb459c2063e5340a4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxScaleChange: 0.4
+  _maxScaleChange: 0.2
   _type: 0
   _maxDuration: 1
   _animationCurve:
@@ -475,8 +517,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2671298270245694604}
   - component: {fileID: 2904890502813276447}
+  - component: {fileID: 5147261982919838979}
   m_Layer: 0
-  m_Name: Inner
+  m_Name: Green Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,7 +534,7 @@ Transform:
   m_GameObject: {fileID: 9128301319987981838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1352773855146840948}
   m_RootOrder: 1
@@ -532,7 +575,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 22
   m_Sprite: {fileID: 21300000, guid: d4da9589d4cc3fa40a0f4d1ff1dfaa44, type: 3}
   m_Color: {r: 0, g: 0.7843138, b: 0, a: 1}
   m_FlipX: 0
@@ -544,3 +587,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5147261982919838979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9128301319987981838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 3

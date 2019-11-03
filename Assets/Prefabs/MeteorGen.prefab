@@ -55,7 +55,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3221470236561394982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e392d088db12678bfb322279c8a73554, type: 3}
+  m_Script: {fileID: 11500000, guid: 56520d9412e59d9548888d07cc0c8413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   meteorPrefab: {fileID: 8674641800801507822, guid: 0f7446d07939fe6b29d78543f8cc003f,
