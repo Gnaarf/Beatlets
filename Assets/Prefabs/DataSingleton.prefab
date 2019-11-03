@@ -114,6 +114,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2478446883513040267, guid: 825a4adc6f3104349831635ea769e9b9,
+        type: 3}
+      propertyPath: _playerDashColor.g
+      value: 0.43137258
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478446883513040267, guid: 825a4adc6f3104349831635ea769e9b9,
+        type: 3}
+      propertyPath: _playerDefaultColor.g
+      value: 0.43137258
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 825a4adc6f3104349831635ea769e9b9, type: 3}
 --- !u!4 &5949925884196680003 stripped

@@ -4,40 +4,39 @@ using UnityEngine;
 
 public class ColorData : MonoBehaviour
 {
-    static ColorData Instance;
-
     [Header("Player")]
     [SerializeField] Color _playerDefaultColor = Color.white;
     public Color PlayerDefaultColor { get => _playerDefaultColor; }
 
     [SerializeField] Color _playerMoveColor = Color.white;
-    public Color PlayerMoveColor { get => Instance._playerMoveColor; }
+    public Color PlayerMoveColor { get => _playerMoveColor; }
 
     [SerializeField] Color _playerDashColor = Color.white;
-    public Color PlayerDashColor { get => Instance._playerDashColor; }
+    public Color PlayerDashColor { get => _playerDashColor; }
 
     [Header("Obstacles")]
     [SerializeField] Color _wallColor = Color.white;
-    public Color WallColor { get => Instance._wallColor; }
+    public Color WallColor { get => _wallColor; }
 
     [Header("Attacks")]
-    [SerializeField] Color _attackColor = Color.white;
-    public Color AttackColor { get => Instance._attackColor; }
-
     [SerializeField] Color _monitorColor = Color.white;
-    public Color MonitorColor { get => Instance._monitorColor; }
+    public Color MonitorColor { get => _monitorColor; }
 
+    [SerializeField] Color _attackColor = Color.white;
+    public Color AttackColor { get => _attackColor; }
+
+    [Header("Background")]
+    [SerializeField] Color _backgroundFloor = Color.white;
+    public Color BackgroundFloor { get => _backgroundFloor; }
+
+    [SerializeField] Color _backgroundVoid = Color.white;
+    public Color BackgroundVoid { get => _backgroundVoid; }
 
     [Header("UI")]
     [SerializeField] Color _textColor = Color.magenta;
-    public Color TextColor { get => Instance._textColor; }
-    
+    public Color TextColor { get => _textColor; }
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
+    [SerializeField] Color _textColor2 = Color.magenta;
+    public Color TextColor2 { get => _textColor2; }
+
 }
