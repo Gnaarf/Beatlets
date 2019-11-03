@@ -24,7 +24,7 @@ public class MetronomeBehave : MonoBehaviour
     {
         if (go) { go=false ;Go();}
         
-        int nextxbeat = Mathf.RoundToInt(Mathf.Floor((Time.fixedTime-startTime)/60*(float)BPM*16));
+        int nextxbeat = Mathf.RoundToInt(Mathf.Floor((Time.fixedTime-startTime)/60*(float)BPM*16/4));
         if(nextxbeat > xbeat){
             xbeat = nextxbeat;
             beat = xbeat / 4;
