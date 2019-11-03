@@ -40,8 +40,11 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
     // Start is called before the first frame update
     void Start()
     {
-
-        FindObjectOfType<MetronomeBehave>().beatListeners.Add(GetComponent<IOnCheckBeat>());
+        MetronomeBehave metronome = FindObjectOfType<MetronomeBehave>();
+        if (metronome != null)
+        {
+            metronome.beatListeners.Add(GetComponent<IOnCheckBeat>());
+        }
         //assing to list
     }
     public void OnCheckBeat(int c, int groundbeat){
