@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hits: 01000000000000000100000000000000
+  hits2: 00
 --- !u!114 &1052278517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +685,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 156452937877469683, guid: 797043ff41581584798ecb4a1f6c4d89,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 797043ff41581584798ecb4a1f6c4d89, type: 3}
 --- !u!1001 &1094025782080022361
@@ -698,6 +704,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttackManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
+        type: 3}
+      propertyPath: _attackPatterns.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
+        type: 3}
+      propertyPath: _attackPatterns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1052278514}
     - target: {fileID: 1094025783280931106, guid: b11f0d1699aab1d4489223f036df8d08,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -753,16 +769,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
-        type: 3}
-      propertyPath: _attackPatterns.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1094025783280931107, guid: b11f0d1699aab1d4489223f036df8d08,
-        type: 3}
-      propertyPath: _attackPatterns.Array.data[0]
-      value: 
-      objectReference: {fileID: 1052278514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b11f0d1699aab1d4489223f036df8d08, type: 3}
 --- !u!1001 &2411825007579918927

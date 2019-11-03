@@ -468,7 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _dashDistance: 4
-  _dashDuration: 0.17
+  _dashDuration: 0.1
   _dashCoolDown: 1
   _dashEffect: {fileID: 287694127}
 --- !u!114 &2411825007660165899
