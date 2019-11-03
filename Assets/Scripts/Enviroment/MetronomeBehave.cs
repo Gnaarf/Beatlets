@@ -5,7 +5,7 @@ using UnityEngine;
 public class MetronomeBehave : MonoBehaviour
 {
     [SerializeField,Range(30,240)]
-    int BPM = 140;
+    int BPM = 120;
     float startTime = 0;
     [SerializeField,ReadOnly] int xbeat;
     [SerializeField,ReadOnly] int beat;
@@ -24,10 +24,10 @@ public class MetronomeBehave : MonoBehaviour
     {
         if (go) { go=false ;Go();}
         
-        int nextxbeat = Mathf.RoundToInt(Mathf.Floor((Time.fixedTime-startTime)/60*(float)BPM*16));
+        int nextxbeat = Mathf.RoundToInt(Mathf.Floor((Time.fixedTime-startTime)/60*(float)BPM*4));
         if(nextxbeat > xbeat){
             xbeat = nextxbeat;
-            beat = xbeat / 4;
+            beat = xbeat / 16;
             foreach(IOnCheckBeat l in beatListeners){
                 l.OnCheckBeat(xbeat,16);
             }

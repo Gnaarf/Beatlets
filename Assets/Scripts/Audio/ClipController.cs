@@ -20,6 +20,7 @@ public class ClipController : MonoBehaviour
     {
         if (loopCount % _loopLength == 0)
         {
+            _audioSource.time = 0;
             if (AudioSource.mute == true && _isActive == true)
             {
                 AudioSource.mute = false;
@@ -38,7 +39,7 @@ public class ClipController : MonoBehaviour
         if (AudioSource != null)
         {
             _name = AudioSource.clip.name;
-            _loopLength = (int) Mathf.Ceil(AudioSource.clip.length / 1.72f);
+            _loopLength = (int) Mathf.Ceil(AudioSource.clip.length / 2.01f);
         }
     }
 

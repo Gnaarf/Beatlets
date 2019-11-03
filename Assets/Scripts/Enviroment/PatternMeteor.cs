@@ -10,10 +10,14 @@ public class PatternMeteor : MonoBehaviour, IOnBeat
     [SerializeField]
     Transform beatBoxTransform= default;
 
+    [SerializeField]
+    ClipController clipController; 
+
     bool onBeat = false;
     
     void OnEnable(){
         count = 3;
+        clipController.SetActive(true);
     }
     // Update is called once per frame
     
@@ -24,7 +28,11 @@ public class PatternMeteor : MonoBehaviour, IOnBeat
             var meteor = Instantiate(meteorPrefab);
             var b = meteor.GetComponent<CMeteorBehave>();
             b.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * Random.Range(1f,5f);
-            if (--count == 0 )gameObject.SetActive(false);
+            if (--count == 0)
+            {
+                clipController.SetActive(false);
+                gameObject.SetActive(false);
+            }
         }
     }
     

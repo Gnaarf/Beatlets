@@ -109,12 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537cfc23a67422c338f8aa1b0fdc16fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countDown: 3.5
+  countDown: 2
   size: 10
-  warnBeginn: 3
+  warnBeginn: 2
   warnAnimate: 1
   warnEnd: 0.3
-  attackEnd: -0.5
+  attackEnd: -1
   warnOut:
     serializedVersion: 2
     m_Curve:
@@ -154,8 +154,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0

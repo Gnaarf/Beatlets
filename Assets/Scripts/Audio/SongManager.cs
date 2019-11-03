@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SongManager : MonoBehaviour
+public class SongManager : MonoBehaviour, IOnBeat
 { 
     [SerializeField]
     private MetronomeBehave _metronomeBehave;
@@ -35,6 +35,7 @@ public class SongManager : MonoBehaviour
     {
         debugSongControlUpdate();
 
+        /*
         if (_lastBaseLineTime > _baseLine.AudioSource.time)
         {
             // next loop started
@@ -49,6 +50,22 @@ public class SongManager : MonoBehaviour
             }
         }
         _lastBaseLineTime = _baseLine.AudioSource.time;
+        */
+    }
+
+    public void OnBeat(int c)
+    {
+        // next loop started
+        // _baseLine.AudioSource.time = 0;
+        _currentLoopCounter++;
+        if (_currentLoopCounter > _maxLoop)
+        {
+            _currentLoopCounter = 0;
+        }
+        foreach (ClipController clipController in _clipList)
+        {
+            clipController.OnLoop(_currentLoopCounter);
+        }
     }
 
     void debugSongControlUpdate()
