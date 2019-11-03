@@ -81,7 +81,7 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
     }
 
     void OnDestroy(){
-        FindObjectOfType<MetronomeBehave>().beatListeners.Remove(GetComponent<IOnCheckBeat>());
+        FindObjectOfType<MetronomeBehave>().beatListeners.Remove(this.GetComponent<IOnCheckBeat>());
     }
 
 

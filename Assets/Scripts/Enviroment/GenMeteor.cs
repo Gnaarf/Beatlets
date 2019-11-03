@@ -2,37 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenLasor : MonoBehaviour, IOnBeat
+public class GenMeteor : MonoBehaviour, IOnBeat
 {
-    [SerializeField] GameObject lasorPrefab= default;
-    [SerializeField] Transform beatBoxTransform= default;
-    [SerializeField] ClipController clipController = default;
+    [SerializeField]
+    GameObject meteorPrefab= default;
+    [SerializeField]
+    Transform beatBoxTransform= default;
 
+    [SerializeField]
+    ClipController clipController =default;
+
+    [SerializeField] int initcount = 3;
     bool measureStarted;
     int count;
 
     void OnEnable(){
-        count = 6;
+        count = initcount;
         measureStarted = false;
         clipController.SetActive(true);
     }
 
     public void OnBeat(int c){
         if (measureStarted == false)
-        {
+        { //wait for Meassure (start at 0 of pattern)
             BeatListener beatListener = GetComponent<BeatListener>();
             measureStarted = c % beatListener.hits.Length == 0;
         }
-
-
         if ( gameObject.activeInHierarchy && measureStarted) {
-            if ( --count <= 0 ) {
+            var meteor = Instantiate(meteorPrefab);
+            var b = meteor.GetComponent<CMeteorBehave>();
+            b.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * Random.Range(1f,5f);
+            if (--count == 0)
+            {
                 clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
-            var go = Instantiate(lasorPrefab);
-            go.transform.position = beatBoxTransform.position;
-            go.transform.rotation = beatBoxTransform.rotation;
         }
     }
+
 }

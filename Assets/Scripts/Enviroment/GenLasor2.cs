@@ -19,7 +19,7 @@ public class GenLasor2 : MonoBehaviour, IOnBeat
         dir = ( Random.value > 0.5 )? -1f:1f;
         rndOffset = Random.Range(-1f,2f);
         measureStarted = false;
-         clipController.SetActive(true);
+        clipController.SetActive(true);
     }
 
     public void OnBeat(int c){
@@ -28,7 +28,6 @@ public class GenLasor2 : MonoBehaviour, IOnBeat
             BeatListener beatListener = GetComponent<BeatListener>();
             measureStarted = c % beatListener.hits.Length == 0;
         }
-
 
         if ( gameObject.activeInHierarchy && measureStarted) {
             if ( --count == 0 ) {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3221470236561392347}
   - component: {fileID: 3221470236561394980}
-  - component: {fileID: 3221470236561394981}
+  - component: {fileID: 8808405366837659003}
   m_Layer: 0
   m_Name: MeteorGen
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hits: 0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   hits2: 00
---- !u!114 &3221470236561394981
+--- !u!114 &8808405366837659003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,9 +55,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3221470236561394982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca2e4562d9724d51ea04858f0d57e19b, type: 3}
+  m_Script: {fileID: 11500000, guid: e392d088db12678bfb322279c8a73554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   meteorPrefab: {fileID: 8674641800801507822, guid: 0f7446d07939fe6b29d78543f8cc003f,
     type: 3}
   beatBoxTransform: {fileID: 0}
+  clipController: {fileID: 0}
+  initcount: 3
