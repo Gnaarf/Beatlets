@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 816174115180623347}
   - component: {fileID: 3575074369173802281}
+  - component: {fileID: 3307274580499046129}
   m_Layer: 0
-  m_Name: Outer
+  m_Name: circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,6 +80,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3307274580499046129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042377606378815777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 7
 --- !u!1 &3585862558309197554
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +106,7 @@ GameObject:
   - component: {fileID: 523359106579216904}
   - component: {fileID: 343643314635886030}
   - component: {fileID: 8735150427422024375}
+  - component: {fileID: 2397647995353343567}
   m_Layer: 0
   m_Name: BeatBox
   m_TagString: Wall
@@ -213,6 +228,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2397647995353343567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585862558309197554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 3
 --- !u!1 &4480819228632650231
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1609439990908842793}
   - component: {fileID: 1140572938323596334}
+  - component: {fileID: 6330595941470815191}
   m_Layer: 0
   m_Name: Outer
   m_TagString: Untagged
@@ -379,6 +408,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6330595941470815191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447303766690750798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 7
 --- !u!1 &7655901334734037548
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2671298270245694604}
   - component: {fileID: 2904890502813276447}
+  - component: {fileID: 2352446886521033104}
   m_Layer: 0
   m_Name: Inner
   m_TagString: Untagged
@@ -544,3 +587,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2352446886521033104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9128301319987981838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 3
