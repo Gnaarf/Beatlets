@@ -48,4 +48,4 @@ MonoBehaviour:
   _playerDashColor: {r: 0, g: 0.2805748, b: 1, a: 1}
   _wallColor: {r: 1, g: 0.8128175, b: 0.24056602, a: 1}
   _attackColor: {r: 1, g: 0.2783019, b: 0.2783019, a: 1}
-  _monitorColor: {r: 1, g: 0.2784314, b: 0.2784314, a: 0.3529412}
+  _monitorColor: {r: 1, g: 0.7872603, b: 0.27843142, a: 0.3529412}
