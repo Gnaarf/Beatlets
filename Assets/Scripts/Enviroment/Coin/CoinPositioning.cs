@@ -8,7 +8,11 @@ public class CoinPositioning : MonoBehaviour
     [SerializeField] float _minDistanceToLastPosition = 5f;
 
     [SerializeField]
-    SoundEffectControl _soundEffectControl; 
+    SoundEffectControl _soundEffectControl;
+
+    int _score = 0; 
+
+    public int Score { get => _score; }
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,7 @@ public class CoinPositioning : MonoBehaviour
         {
             ResetToRandomPosition(true);
             _soundEffectControl.Play();
+            _score++;
         }
     }
 

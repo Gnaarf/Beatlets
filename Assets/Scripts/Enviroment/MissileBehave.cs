@@ -13,7 +13,7 @@ public class MissileBehave : MonoBehaviour
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.color = ColorData.AttackColor;
+        _spriteRenderer.color = ColorDataSingleton.Instance.AttackColor;
     }
     
     // Update is called once per frame

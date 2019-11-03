@@ -13,7 +13,7 @@ public class Metorbehave : MonoBehaviour
     {
         var f = 1/(1+distance);
         var renderer = GetComponent<SpriteRenderer>();
-        renderer.color = Color.Lerp(ColorData.MonitorColor * new Color(1,1,1,1/(1+distance)),ColorData.AttackColor,1/(1+distance));
+        renderer.color = Color.Lerp(ColorDataSingleton.Instance.MonitorColor * new Color(1,1,1,1/(1+distance)), ColorDataSingleton.Instance.AttackColor,1/(1+distance));
         
     }
 
@@ -25,7 +25,7 @@ public class Metorbehave : MonoBehaviour
         f =  f<1&&f>0?f:1; 
         transform.localScale = f * Vector3.one * size;
         var renderer = GetComponent<SpriteRenderer>();
-        renderer.color = Color.Lerp(ColorData.MonitorColor * new Color(1,1,1,f),ColorData.AttackColor,f);
+        renderer.color = Color.Lerp(ColorDataSingleton.Instance.MonitorColor * new Color(1,1,1,f), ColorDataSingleton.Instance.AttackColor,f);
         if( boom ){
             //spawn Wall??
             Destroy(gameObject);

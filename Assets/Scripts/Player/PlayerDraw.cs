@@ -22,11 +22,11 @@ public class PlayerDraw : MonoBehaviour
     void Start()
     {
         _playerMovementRef = GetComponent<PlayerMovement>();
-        _idleSpriteRef.color = ColorData.PlayerDefaultColor;
+        _idleSpriteRef.color = ColorDataSingleton.Instance.PlayerDefaultColor;
         _idleSpriteRef.transform.localScale = Vector3.zero;
-        _moveSpriteRef.color = ColorData.PlayerMoveColor;
+        _moveSpriteRef.color = ColorDataSingleton.Instance.PlayerMoveColor;
         _moveSpriteRef.transform.localScale = Vector3.zero;
-        _dashSpriteRef.color = ColorData.PlayerDashColor;
+        _dashSpriteRef.color = ColorDataSingleton.Instance.PlayerDashColor;
         _dashSpriteRef.transform.localScale = Vector3.zero;
 
         _activeSprite = _idleSpriteRef;
