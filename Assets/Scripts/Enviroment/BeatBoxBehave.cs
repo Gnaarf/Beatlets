@@ -4,24 +4,13 @@ using UnityEngine;
 
 public class BeatBoxBehave : MonoBehaviour, IOnBeat2
 {
-    [SerializeField,Range(-1,1)]
-    float rspeed = .5F;
-    
     [SerializeField]
     GameObject meteorPrefab;
-    
-    bool onBeat = true; 
-    int beat=0;
+
     // Start is called before the first frame update
     void Start()
     {
 //         GetComponent<BeatListener>().Sixtenths();
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        gameObject.transform.Rotate(new Vector3(0,0,1), Time.fixedDeltaTime*rspeed*360);
     }
     
     void Update()

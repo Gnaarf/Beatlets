@@ -19,6 +19,8 @@ public class MissileBehave : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        countDown -=  Time.fixedDeltaTime;
+        
         gameObject.transform.position += gameObject.transform.up * speed* Time.fixedDeltaTime;
         if ( countDown < 0f ){
             Destroy(gameObject);
