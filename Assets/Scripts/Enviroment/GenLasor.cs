@@ -14,7 +14,7 @@ public class GenLasor : MonoBehaviour, IOnBeat
     void OnEnable(){
         count = 6;
         measureStarted = false;
-//         clipController.SetActive(true);
+        clipController.SetActive(true);
     }
     
     public void OnBeat(int c){
@@ -27,7 +27,7 @@ public class GenLasor : MonoBehaviour, IOnBeat
         
         if ( gameObject.activeInHierarchy && measureStarted) {
             if ( --count == 0 ) {
-//                 clipController.SetActive(false);
+                clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
             var go = Instantiate(lasorPrefab);

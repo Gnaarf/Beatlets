@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3154907664390081496}
   - component: {fileID: 3154907664390081497}
   - component: {fileID: 6456858114410652135}
+  - component: {fileID: 448617273}
+  - component: {fileID: 448617274}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Attack
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7494ec24f0fefc70d8ff1b78cf355fa5, type: 3}
-  m_Color: {r: 0.8980393, g: 0.8980393, b: 0.8980393, a: 1}
+  m_Color: {r: 0.990566, g: 0.3457636, b: 0.3457636, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,3 +123,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &448617273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3154907664390081498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d104fe76eb57630bdf7de258d83c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hits: 01000100010001000100010001000100
+  hits2: 00
+--- !u!114 &448617274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3154907664390081498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11c84df0990ccb459c2063e5340a4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxScaleChange: 0.2
+  _type: 2
+  _maxDuration: 0.2
+  _animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
