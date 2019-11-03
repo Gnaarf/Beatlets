@@ -7,10 +7,13 @@ public class MissileBehave : MonoBehaviour
     [SerializeField,Range(0,10)]
     float speed = 1f;
     public float countDown = 4f;
+
+    SpriteRenderer _spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer.color = ColorData.AttackColor;
     }
     
     // Update is called once per frame

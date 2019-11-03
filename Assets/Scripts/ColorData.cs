@@ -26,6 +26,8 @@ public class ColorData : MonoBehaviour
 
     [SerializeField] Color _monitorColor = Color.white;
     public static Color MonitorColor { get => Instance._monitorColor; }
+
+
     
 
     private void Awake()

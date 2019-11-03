@@ -16,6 +16,8 @@ public class PlayerDying : MonoBehaviour
         if (collider.tag == "Attack")
         {
             _playerStateBehaviourRef.ResetToSpawnPosition();
+
+            // Reset Game!
         }
     }
 }
