@@ -2,6 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EColor
+{
+    PlayerDefault,
+    PlayerMove,
+    PlayerDash,
+    Wall,
+    Monitor,
+    Attack,
+    BackgroundFloor,
+    BackgroundVoid,
+    TextColor,
+    TextColor2,
+}
+
 public class ColorData : MonoBehaviour
 {
     [Header("Player")]
@@ -38,5 +52,4 @@ public class ColorData : MonoBehaviour
 
     [SerializeField] Color _textColor2 = Color.magenta;
     public Color TextColor2 { get => _textColor2; }
-
 }

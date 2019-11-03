@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 550429081}
   - component: {fileID: 550429083}
   - component: {fileID: 550429082}
+  - component: {fileID: 550429084}
   m_Layer: 5
   m_Name: Start Again
   m_TagString: Untagged
@@ -299,6 +300,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &550429084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550429080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65a1754d2a42104caf04065108992ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 9
 --- !u!1 &1641595964
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +438,7 @@ GameObject:
   - component: {fileID: 1953245679}
   - component: {fileID: 1953245681}
   - component: {fileID: 1953245680}
+  - component: {fileID: 8127835571668445927}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -570,6 +585,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8127835571668445927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953245678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65a1754d2a42104caf04065108992ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 8
 --- !u!1 &2411825006040574291
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2411825006040574289}
   - component: {fileID: 2411825006040574290}
+  - component: {fileID: 1269893732}
   m_Layer: 0
   m_Name: StandStillSprite
   m_TagString: Untagged
@@ -649,6 +678,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1269893732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411825006040574291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
 --- !u!1 &2411825006950625078
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2411825006950625076}
   - component: {fileID: 2411825006950625077}
+  - component: {fileID: 720214308}
   m_Layer: 0
   m_Name: MoveSprite
   m_TagString: Untagged
@@ -728,6 +771,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &720214308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411825006950625078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
 --- !u!1 &2411825007002049412
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2411825007002049410}
   - component: {fileID: 2411825007002049411}
+  - component: {fileID: 653985125}
   m_Layer: 0
   m_Name: DashSprite
   m_TagString: Untagged
@@ -807,6 +864,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &653985125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411825007002049412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9fd8842d7bdcd48a449902416af039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 2
 --- !u!1 &2411825007660165901
 GameObject:
   m_ObjectHideFlags: 0

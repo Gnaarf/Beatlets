@@ -37,4 +37,33 @@ public class ColorDataSingleton : MonoBehaviour
 
         Instance = colorDataArray[index];
     }
+
+    public static Color GetColor(EColor eColor)
+    {
+        switch (eColor)
+        {
+            case EColor.PlayerDefault:
+                return Instance.PlayerDashColor;
+            case EColor.PlayerMove:
+                return Instance.PlayerMoveColor;
+            case EColor.PlayerDash:
+                return Instance.PlayerDashColor;
+            case EColor.Wall:
+                return Instance.WallColor;
+            case EColor.Monitor:
+                return Instance.MonitorColor;
+            case EColor.Attack:
+                return Instance.AttackColor;
+            case EColor.BackgroundFloor:
+                return Instance.BackgroundFloor;
+            case EColor.BackgroundVoid:
+                return Instance.BackgroundVoid;
+            case EColor.TextColor:
+                return Instance.TextColor;
+            case EColor.TextColor2:
+                return Instance.TextColor2;
+            default:
+                return Instance.BackgroundVoid;
+        }
+    }
 }
