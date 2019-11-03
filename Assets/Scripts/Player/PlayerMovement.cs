@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // update dash stuff
         float timeSinceLastDashActivation = Time.time - _lastDashActivationTime;
-        if (Input.GetAxis("Jump") > 0f && timeSinceLastDashActivation > _dashCoolDown)
+        if (Input.GetAxis("Fire1") > 0f && timeSinceLastDashActivation > _dashCoolDown)
         {
             _lastDashActivationTime = Time.time;
             _dashEffect.Play();
