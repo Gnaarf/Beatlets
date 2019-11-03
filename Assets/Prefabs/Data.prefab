@@ -49,3 +49,4 @@ MonoBehaviour:
   _wallColor: {r: 1, g: 0.8128175, b: 0.24056602, a: 1}
   _attackColor: {r: 1, g: 0.2783019, b: 0.2783019, a: 1}
   _monitorColor: {r: 1, g: 0.7872603, b: 0.27843142, a: 0.3529412}
+  _textColor: {r: 0, g: 0.8584906, b: 0.082108654, a: 1}

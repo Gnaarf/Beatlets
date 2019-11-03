@@ -6,6 +6,7 @@ public class SongManager : MonoBehaviour, IOnBeat
 { 
     [SerializeField]
     private MetronomeBehave _metronomeBehave;
+
     
     [SerializeField]
     ClipController _baseLine; 
@@ -71,7 +72,8 @@ public class SongManager : MonoBehaviour, IOnBeat
             clipController.Stop();
         }
         _audioSource.clip = _stopGameSound;
-        _audioSource.Stop();
+        _audioSource.Play();
+
     }
 
     public void OnBeat(int c)
