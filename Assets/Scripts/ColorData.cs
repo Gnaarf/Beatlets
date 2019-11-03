@@ -28,6 +28,9 @@ public class ColorData : MonoBehaviour
     public static Color MonitorColor { get => Instance._monitorColor; }
 
 
+    [Header("UI")]
+    [SerializeField] Color _textColor = Color.magenta;
+    public static Color TextColor { get => Instance._textColor; }
     
 
     private void Awake()
