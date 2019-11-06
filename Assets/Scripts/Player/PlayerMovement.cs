@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 CurrentMovement { get; private set; }
 
+    public float DashCoolDown { get => _dashCoolDown; }
+
     private float DashSpeed => _dashDistance / _dashDuration;
 
     private float _lastDashActivationTime = float.MinValue;
