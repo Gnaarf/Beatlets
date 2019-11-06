@@ -84,30 +84,4 @@ public class PlayerMovement : MonoBehaviour
             CurrentState = MovementState.Idle;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        print("Player: onCollisionEnter: " + collision.otherCollider.name);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        print("Player: onTriggerEnter: " + collider.name);
-
-        if (collider.tag == "Wall")
-        {
-            //transform.position -= CurrentMovement;
-            //Vector3 closestPoint = collider.ClosestPoint(transform.position);
-            //transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collider)
-    {
-        if (collider.tag == "Wall")
-        {
-            //Vector3 closestPoint = collider.ClosestPoint(transform.position);
-            //transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
-        }
-    }
 }
