@@ -45,17 +45,17 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        // get User Input
+        Vector2 movementInput = Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.up;
+
         // update dash stuff
         float timeSinceLastDashActivation = Time.time - _lastDashActivationTime;
-        if (Input.GetAxis("Fire1") > 0f && timeSinceLastDashActivation > _dashCoolDown)
+        if (Input.GetAxis("Fire1") > 0f && timeSinceLastDashActivation > _dashCoolDown && movementInput.sqrMagnitude > float.Epsilon)
         {
             _lastDashActivationTime = Time.time;
             _dashEffect.Play();
         }
         CurrentState = timeSinceLastDashActivation < _dashDuration ? MovementState.Dash : CurrentState;
-
-        // actual movement
-        Vector2 movementInput = Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.up;
 
         UpdateState(timeSinceLastDashActivation, movementInput);
 
