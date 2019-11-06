@@ -94,9 +94,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (collider.tag == "Wall")
         {
-            transform.position -= CurrentMovement;
-            Vector3 closestPoint = collider.ClosestPoint(transform.position);
-            transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
+            //transform.position -= CurrentMovement;
+            //Vector3 closestPoint = collider.ClosestPoint(transform.position);
+            //transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
         }
     }
 
@@ -104,8 +104,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collider.tag == "Wall")
         {
-            Vector3 closestPoint = collider.ClosestPoint(transform.position);
-            transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
+            //Vector3 closestPoint = collider.ClosestPoint(transform.position);
+            //transform.position = closestPoint + (transform.position - closestPoint).normalized * (transform.lossyScale.x + transform.lossyScale.y) * 0.25f;
         }
     }
 }
