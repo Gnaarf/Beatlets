@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SongManager : MonoBehaviour, IOnBeat
-{ 
+public class SongManager : MonoBehaviour, IOnBeat, ITimeScale
+{
     [SerializeField]
     private MetronomeBehave _metronomeBehave;
 
@@ -88,6 +88,15 @@ public class SongManager : MonoBehaviour, IOnBeat
         foreach (ClipController clipController in _clipList)
         {
             clipController.OnLoop(_currentLoopCounter);
+        }
+    }
+    public void SetTimeScale(float timeScale)
+    {
+        foreach (ClipController clipController in _clipList)
+        {
+            var au=clipController.GetComponent<AudioSource>();
+            au.pitch=timeScale;
+            print("PP"+au.clip.length);
         }
     }
 

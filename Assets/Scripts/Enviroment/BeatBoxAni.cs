@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeatBoxAni : MonoBehaviour
 {
     [SerializeField]
-    Transform _player;
+    Transform _player = default;
 
     [SerializeField,Range(-1,1)]
     float rspeed = .5F;

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenMeteorStorm : MonoBehaviour, IOnBeat
+public class GenMeteorStorm : MonoBehaviour, IOnBeat, ITimeScale
 {
+    public float timeScale = 1;
     int count = 3;
+    //just use a small fast meteor
     [SerializeField]
     GameObject meteorPrefab= default;
     [SerializeField]
@@ -14,13 +16,14 @@ public class GenMeteorStorm : MonoBehaviour, IOnBeat
     ClipController clipController;
 
     [SerializeField] int initcount = 16;
-    bool measureStarted;
     float spread;
 
 
     void OnEnable(){
         count = initcount;
         clipController.SetActive(true);
+        GetComponent<BeatListener>().wait0=true;
+
 
         //set this.position using refPosition and Direction (BeatBox)
         //transform.position = refTransform.position + ref.transform.up * Random.Range(1f,5f);
@@ -31,16 +34,9 @@ public class GenMeteorStorm : MonoBehaviour, IOnBeat
     }
 
     public void OnBeat(int c){
-        if (measureStarted == false)
-        {
-            BeatListener beatListener = GetComponent<BeatListener>();
-            measureStarted = c % beatListener.hits.Length == 0;
-        }
-        if ( gameObject.activeInHierarchy && measureStarted) {
-            var meteor = Instantiate(meteorPrefab);
-            //just use small meteor
-//             var b = meteor.GetComponent<CMeteorBehave>();
-//             b.size=2;
+        if ( gameObject.activeInHierarchy) {
+            var go = Instantiate(meteorPrefab).GetComponent<CMeteorBehave>();
+            go.timeScale=timeScale;
 
             // random x, y auf Einheitskreis
             float x,y;
@@ -49,7 +45,7 @@ public class GenMeteorStorm : MonoBehaviour, IOnBeat
                 y = Random.value*2-1;
             }while(Mathf.Sqrt(x*x+y*y)>1);
 
-            meteor.transform.position = transform.position
+            go.transform.position = refTransform.position
                                        + Vector3.right * x * spread
                                        + Vector3.up * y * spread;
 
@@ -59,5 +55,8 @@ public class GenMeteorStorm : MonoBehaviour, IOnBeat
                 gameObject.SetActive(false);
             }
         }
+    }
+    public void SetTimeScale(float timeScale){
+        this.timeScale = timeScale;
     }
 }

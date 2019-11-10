@@ -13,7 +13,6 @@ public class GenMissile : MonoBehaviour, IOnBeat
     [SerializeField]
     ClipController clipController;
 
-    bool onBeat = false;
     bool measureStarted;
 
     void OnEnable(){

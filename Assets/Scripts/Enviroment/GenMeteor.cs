@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenMeteor : MonoBehaviour, IOnBeat
+public class GenMeteor : MonoBehaviour, IOnBeat, ITimeScale
 {
     [SerializeField]
     GameObject meteorPrefab= default;
@@ -13,31 +13,29 @@ public class GenMeteor : MonoBehaviour, IOnBeat
     ClipController clipController =default;
 
     [SerializeField] int initcount = 3;
-    bool measureStarted;
     int count;
+    float timeScale=1;
 
     void OnEnable(){
         count = initcount;
-        measureStarted = false;
+        GetComponent<BeatListener>().wait0=true;
         clipController.SetActive(true);
     }
 
     public void OnBeat(int c){
-        if (measureStarted == false)
-        { //wait for Meassure (start at 0 of pattern)
-            BeatListener beatListener = GetComponent<BeatListener>();
-            measureStarted = c % beatListener.hits.Length == 0;
-        }
-        if ( gameObject.activeInHierarchy && measureStarted) {
-            var meteor = Instantiate(meteorPrefab);
-            var b = meteor.GetComponent<CMeteorBehave>();
-            b.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * Random.Range(1f,5f);
+        if ( gameObject.activeInHierarchy) {
+            var go = Instantiate(meteorPrefab).GetComponent<CMeteorBehave>();
+            go.timeScale=timeScale;
+            go.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * Random.Range(1f,5f);
             if (--count == 0)
             {
                 clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
         }
+    }
+    public void SetTimeScale(float timeScale){
+        this.timeScale = timeScale;
     }
 
 }
