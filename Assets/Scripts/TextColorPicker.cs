@@ -8,6 +8,9 @@ public class TextColorPicker : MonoBehaviour
     [SerializeField]
     EColor color;
 
+    [Range(0f, 1f)]
+    [SerializeField] float alphaModifier = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +18,8 @@ public class TextColorPicker : MonoBehaviour
 
         if (textMesh != null)
         {
-            textMesh.color = ColorDataSingleton.GetColor(color);
+            Color c = ColorDataSingleton.GetColor(color);
+            textMesh.color = new Color(c.r, c.g, c.b, alphaModifier * c.a);
         }
         else
         {

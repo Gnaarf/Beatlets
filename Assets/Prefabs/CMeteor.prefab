@@ -111,8 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countDown: 2
   size: 10
+  timeScale: 1
   warnBeginn: 2
-  warnAnimate: 1
+  warnAnimate: 0.5
   warnEnd: 0.3
   attackEnd: -1
   warnOut:
