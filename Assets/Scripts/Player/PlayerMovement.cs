@@ -48,6 +48,11 @@ public class PlayerMovement : MonoBehaviour
         // get User Input
         Vector2 movementInput = Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.up;
 
+        if(movementInput.sqrMagnitude > float.Epsilon)
+        {
+            movementInput = movementInput.normalized;
+        }
+
         // update dash stuff
         float timeSinceLastDashActivation = Time.time - _lastDashActivationTime;
         if (Input.GetAxis("Fire1") > 0f && timeSinceLastDashActivation > _dashCoolDown && movementInput.sqrMagnitude > float.Epsilon)

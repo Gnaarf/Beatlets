@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageColorPicker : MonoBehaviour
+public class ImageColorMixPicker : MonoBehaviour
 {
     [SerializeField]
-    EColor color;
+    EColor color1;
+    [SerializeField]
+    EColor color2;
 
     [Range(0f, 1f)]
     [SerializeField] float alphaModifier = 1f;
@@ -18,7 +20,7 @@ public class ImageColorPicker : MonoBehaviour
 
         if (image != null)
         {
-            Color c = ColorDataSingleton.GetColor(color);
+            Color c = Color.Lerp(ColorDataSingleton.GetColor(color1), ColorDataSingleton.GetColor(color2), 0.5f);
             image.color = new Color(c.r, c.g, c.b, alphaModifier * c.a);
         }
         else

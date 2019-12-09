@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class CMeteorBehave : MonoBehaviour
 {
-    
-    public float countDown = 3; 
+
+    public float countDown = 3;
     public float size = 10;
+    public float timeScale = 1;
     [SerializeField] float warnBeginn = 2f;
     [SerializeField] float warnAnimate = 1.5f;
     [SerializeField] float warnEnd = 0.5f;
     [SerializeField] float attackEnd = -0.5f;
     [SerializeField] AnimationCurve warnOut = default;
     [SerializeField] AnimationCurve attackIn = default;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class CMeteorBehave : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        countDown -=  Time.fixedDeltaTime;
+        countDown -=  timeScale * Time.fixedDeltaTime;
         var renderer = GetComponent<SpriteRenderer>();
         var s = 1.0f;
         if ( countDown < warnBeginn && countDown > warnAnimate){
@@ -47,8 +48,8 @@ public class CMeteorBehave : MonoBehaviour
         } else if ( countDown < attackEnd ){
              Destroy(gameObject);
         }
-    
+
         transform.localScale = s * Vector3.one * size;
-        
+
     }
 }

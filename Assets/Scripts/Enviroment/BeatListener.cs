@@ -2,27 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// struct BeatData{
-//     totalCount;
-//
-//
-// }
-
 public interface IOnBeat
 {
     void OnBeat(int c);
-
-
 }
 public interface IOnBeat2
 {
     void OnBeat2(int c);
-
-
+}
+public interface ITimeScale
+{
+    void SetTimeScale(float timeScale);
 }
 public interface IOnCheckBeat
 {
     void OnCheckBeat(int c, int groundbeat);
+    void SetTimeScale(float timeScale);
+
 }
 
 public class BeatListener : MonoBehaviour,IOnCheckBeat
@@ -35,6 +31,8 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
         Eights,
         Sixteenths
     };
+    public bool wait0 = false;
+    public float timeScale = 1;
 
 
     // Start is called before the first frame update
@@ -48,6 +46,10 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
         //assing to list
     }
     public void OnCheckBeat(int c, int groundbeat){
+        if( wait0 ){
+            wait0 = (c % hits.Length != 0);
+            if( wait0 ) return;
+        }
         if( hits[c % hits.Length]){
             foreach(IOnBeat o in GetComponents<IOnBeat>()){
                 o.OnBeat(c);
@@ -60,9 +62,13 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
 
             }
         }
-
     }
-
+    public void SetTimeScale(float timeScale){
+        this.timeScale = timeScale;
+        foreach(ITimeScale o in GetComponents<ITimeScale>()){
+            o.SetTimeScale(timeScale);
+        }
+    }
     public void Halfs(){
         for(int i = 0 ; i < hits.Length; i++){
             hits[i] = (i % 8 == 0);

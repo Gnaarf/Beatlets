@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class MetronomeBehave : MonoBehaviour
 {
+    // calculate beats from time
     [SerializeField,Range(30,240)]
-    int BPM = 140;
+    int BPM = 120;
     float startTime = 0;
+    float scaleTime = 0;
+    int scaleXBeat = 0;
+    [SerializeField,ReadOnly] int curBPM;
+    [SerializeField,ReadOnly] float timeScale = 0;
     [SerializeField,ReadOnly] int xbeat;
     [SerializeField,ReadOnly] int beat;
     public List<IOnCheckBeat> beatListeners = new List<IOnCheckBeat>();
@@ -19,25 +24,54 @@ public class MetronomeBehave : MonoBehaviour
     {
         go = true;
     }
-    
+
     void FixedUpdate()
     {
+        float now = Time.fixedTime;
         if (go) { go=false ;Go();}
-        
-        int nextxbeat = Mathf.RoundToInt(Mathf.Floor((Time.fixedTime-startTime)/60*(float)BPM*16/4));
+        if (curBPM==0){
+            CheckBPMchange(now); //from stop always check
+
+        }
+        int nextxbeat = Mathf.RoundToInt(Mathf.Floor((now-scaleTime)/60*(float)curBPM*16/4))+scaleXBeat;
         if(nextxbeat > xbeat){
             xbeat = nextxbeat;
-            beat = xbeat / 4;
+            beat = xbeat * 4 / 16;
             foreach(IOnCheckBeat l in beatListeners){
                 l.OnCheckBeat(xbeat,16);
             }
+            CheckBPMchange(now);
         }
-        
     }
+
+    float ScaleTime(){
+        return (float)BPM/120f;
+    }
+
+    private void CheckBPMchange(float now){
+        if(curBPM != BPM){
+                curBPM=BPM;
+                scaleTime=now;
+                scaleXBeat=xbeat;
+                timeScale=ScaleTime();
+                print( "TimeScale: " + timeScale);
+                foreach(IOnCheckBeat l in beatListeners){
+                    l.SetTimeScale(timeScale);
+                }
+        }
+    }
+
+    public void SetBPM(int BPM){
+        this.BPM=BPM;
+    }
+
 
     public void Go(){
         print("GO - previous StartTime: " + startTime + ", new StartTime: " + Time.fixedTime);
         xbeat=0;
+        curBPM=0;
+        scaleXBeat=xbeat;
         startTime=Time.fixedTime;
+        scaleTime=startTime;
     }
 }
