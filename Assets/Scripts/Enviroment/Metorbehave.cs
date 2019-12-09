@@ -22,7 +22,7 @@ public class Metorbehave : MonoBehaviour
     {
         distance -= speed * Time.fixedDeltaTime;
         var f = 2/(2+distance);
-        f =  f<1&&f>0?f:1; 
+        f =  f<1&&f>0?f:1;
         transform.localScale = f * Vector3.one * size;
         var renderer = GetComponent<SpriteRenderer>();
         renderer.color = Color.Lerp(ColorDataSingleton.Instance.MonitorColor * new Color(1,1,1,f), ColorDataSingleton.Instance.AttackColor,f);

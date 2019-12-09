@@ -28,7 +28,6 @@ public class CoinPositioning : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        print("colllrneuditranetraiondtraonision" + collider.name);
         if(collider.tag == "Player")
         {
             ResetToRandomPosition(true);
