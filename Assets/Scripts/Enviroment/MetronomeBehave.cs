@@ -54,7 +54,7 @@ public class MetronomeBehave : MonoBehaviour
                 scaleTime=now;
                 scaleXBeat=xbeat;
                 timeScale=ScaleTime();
-                print( "TimeScale: " + timeScale);
+                //print( "TimeScale: " + timeScale);
                 foreach(IOnCheckBeat l in beatListeners){
                     l.SetTimeScale(timeScale);
                 }

@@ -25,6 +25,8 @@ public class PressureWaveBehave : MonoBehaviour
 
     IEnumerator Expand()
     {
+        Debug.Log("START");
+
         float timer = 0f;
         while (timer < animationCount * durationPerAnimation)
         {

@@ -18,20 +18,32 @@ public class GenPressureWave : MonoBehaviour, IOnBeat
     }
 
     public void OnBeat(int c){
-        if (measureStarted == false)
+        if (count > 0)
         {
-            BeatListener beatListener = GetComponent<BeatListener>();
-            measureStarted = c % beatListener.hits.Length == 0;
-        }
-
-
-        if ( gameObject.activeInHierarchy && measureStarted) {
-            if ( --count <= 0 ) {
-                clipController.SetActive(false);
-                gameObject.SetActive(false);
+            if (measureStarted == false)
+            {
+                BeatListener beatListener = GetComponent<BeatListener>();
+                measureStarted = c % beatListener.hits.Length == 0;
             }
-            var go = Instantiate(pressureWavePrefab);
-            go.transform.position = beatBoxTransform.position;
+
+
+            if (gameObject.activeInHierarchy && measureStarted)
+            {
+                if (--count <= 0)
+                {
+                    clipController.SetActive(false);
+                    StartCoroutine(SetActiveAfterSeconds(4.5f, false));
+                }
+                var go = Instantiate(pressureWavePrefab);
+                go.transform.position = beatBoxTransform.position;
+            }
         }
     }
+
+    IEnumerator SetActiveAfterSeconds(float seconds, bool active)
+    {
+        yield return new WaitForSeconds(seconds);
+        gameObject.SetActive(active);
+    }
 }
+

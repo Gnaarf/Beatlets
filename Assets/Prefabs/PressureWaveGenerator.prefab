@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4744689898014528266}
   - component: {fileID: 989379424036678610}
+  - component: {fileID: 141074118}
   m_Layer: 0
   m_Name: PressureWaveGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4744689898014528266
 Transform:
   m_ObjectHideFlags: 0
@@ -47,3 +48,19 @@ MonoBehaviour:
     type: 3}
   beatBoxTransform: {fileID: 0}
   clipController: {fileID: 0}
+--- !u!114 &141074118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394766741619294086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d104fe76eb57630bdf7de258d83c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hits: 01000000000000000000000000000000
+  hits2: 00
+  wait0: 1
+  timeScale: 1

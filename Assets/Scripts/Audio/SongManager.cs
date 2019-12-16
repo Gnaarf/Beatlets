@@ -96,7 +96,7 @@ public class SongManager : MonoBehaviour, IOnBeat, ITimeScale
         {
             var au=clipController.GetComponent<AudioSource>();
             au.pitch=timeScale;
-            print("PP"+au.clip.length);
+            //print("PP"+au.clip.length);
         }
     }
 
