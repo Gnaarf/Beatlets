@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a5b31ff33113b4f91f09ead36737a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animaitonCurve:
+  animationCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -245,15 +245,6 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
-    - serializedVersion: 3
-      time: 0.26235685
-      value: 0.5269637
-      inSlope: 1.4369527
-      outSlope: 1.4369527
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
@@ -268,7 +259,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   animationCount: 3
   radiusExpansionPerAnimation: 3
-  durationPerAnimation: 2
+  durationPerAnimation: 1.5
   innerGraphicTransform: {fileID: 8373869165380965688}
   outerGraphicTransform: {fileID: 8373869166125428969}
   width: 0.5
