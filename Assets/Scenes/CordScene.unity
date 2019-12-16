@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 164208007}
   - component: {fileID: 164208005}
   m_Layer: 5
-  m_Name: DashButtonImage - Keyboard
+  m_Name: DashButtonImage - GamePad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1602,6 +1602,7 @@ GameObject:
   - component: {fileID: 463635168}
   - component: {fileID: 463635167}
   - component: {fileID: 463635169}
+  - component: {fileID: 463635170}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -1672,12 +1673,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463635165}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae0befa834bc03b4aa41516b9c66163c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  alphaModifier: 1
+--- !u!114 &463635170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463635165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2614ab0ce4d143245b30979943b5d233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color1: 0
+  color2: 6
   alphaModifier: 1
 --- !u!1001 &476243921
 PrefabInstance:
@@ -1808,7 +1824,7 @@ GameObject:
   - component: {fileID: 537906476}
   - component: {fileID: 537906475}
   m_Layer: 5
-  m_Name: DashButtonImage - Keyboard Background
+  m_Name: DashButtonImage - GamePad Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5579,6 +5595,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1636495299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1472768721832654576, guid: 20037f54ec1e85e47a4aa848c29dfb4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 451563699059344852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24dfcbbb32b22149a84b9f4f19b6038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1670155371
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,10 +5723,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1783675054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae0befa834bc03b4aa41516b9c66163c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2614ab0ce4d143245b30979943b5d233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 0
+  color1: 0
+  color2: 6
   alphaModifier: 1
 --- !u!1 &1783696152
 GameObject:
@@ -6531,6 +6560,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 451563698814720083, guid: 20037f54ec1e85e47a4aa848c29dfb4d,
+        type: 3}
+      propertyPath: _testData
+      value: 
+      objectReference: {fileID: 1636495299}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20037f54ec1e85e47a4aa848c29dfb4d, type: 3}
 --- !u!1001 &2411825007579918927
