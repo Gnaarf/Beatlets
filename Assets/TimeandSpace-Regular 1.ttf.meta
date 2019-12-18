@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: abfda81f85dc050429e8ddb22b55cb26
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Time and Space
+  fontNames:
+  - Time and Space
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e3726cda2d98dd84f99f7382dff1cd06, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

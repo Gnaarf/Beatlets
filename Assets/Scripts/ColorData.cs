@@ -53,4 +53,7 @@ public class ColorData : MonoBehaviour
 
     [SerializeField] Color _textColor2 = Color.magenta;
     public Color TextColor2 { get => _textColor2; }
+
+    [SerializeField] List<ColorBlindMode> _ignoreOnColorBlindModes = new List<ColorBlindMode>();
+    public List<ColorBlindMode> IgnoreOnColorBlindModes {get => _ignoreOnColorBlindModes; }
 }

@@ -14,7 +14,7 @@ public class TextColorPicker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TextMeshProUGUI textMesh = GetComponent<TextMeshProUGUI>();
+        TMP_Text textMesh = GetComponent<TMP_Text>();
 
         if (textMesh != null)
         {

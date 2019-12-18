@@ -35,8 +35,8 @@ public class GenPressureWave : MonoBehaviour, IOnBeat
                 gameObject.SetActive(false);
             }
             var go = Instantiate(pressureWavePrefab);
-            pressureWavePrefab.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = callCount * 2; // outer Image
-            pressureWavePrefab.transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder = callCount * 2 + 1; // outer Image
+            go.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = callCount * 2; // outer Image
+            go.transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder = callCount * 2 + 1; // outer Image
             callCount++;
             go.transform.position = beatBoxTransform.position - Vector3.forward * 0.5f;
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +12,8 @@ public class ColorDataSingleton : MonoBehaviour
 
     [Header("Debugging")]
     [SerializeField]
-    ColorData _testData; 
-
+    ColorData _testData;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -32,10 +33,21 @@ public class ColorDataSingleton : MonoBehaviour
     void SetRandomColorData()
     {
         ColorData[] colorDataArray = GetComponentsInChildren<ColorData>();
-        int index = Random.Range(0, colorDataArray.Length);
-        print("index: " + index);
+        if (colorDataArray.Length > 0)
+        {
+            bool isForbiddenInColorBlindMode = false;
 
-        Instance = colorDataArray[index];
+            do
+            {
+                int index = UnityEngine.Random.Range(0, colorDataArray.Length);
+                print("index: " + index);
+
+                Instance = colorDataArray[index];
+
+                isForbiddenInColorBlindMode = Instance.IgnoreOnColorBlindModes.Contains(ColorBlindnessSettings.ColorBlindMode);
+            }
+            while (isForbiddenInColorBlindMode);
+        }
     }
 
     public static Color GetColor(EColor eColor)
