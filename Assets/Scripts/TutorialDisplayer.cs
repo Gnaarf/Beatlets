@@ -5,6 +5,12 @@ using UnityEngine.XR;
 
 public class TutorialDisplayer : MonoBehaviour
 {
+    [Header("Time until Tutorials appear:")]
+    [SerializeField] float _firstMoveTutorialAppear = 7f;
+    [SerializeField] float _moveTutorialReappear = 30f;
+    [SerializeField] float _MoveDurationUntilDashTutorialAppear = 8f;
+
+    [Space]
     [SerializeField] PlayerMovement _playerMovement;
 
     [SerializeField] InputChecker.InputType _defaultInputDevice;
@@ -14,12 +20,6 @@ public class TutorialDisplayer : MonoBehaviour
     [SerializeField] GameObject _keyboardDash;
     [SerializeField] GameObject _gamePadMove;
     [SerializeField] GameObject _gamePadDash;
-
-    Renderer[] _tutorialBoxBackgroundRenderers;
-    Renderer[] _keyboardMoveRenderers;
-    Renderer[] _keyboardDashRenderers;
-    Renderer[] _gamePadMoveRenderers;
-    Renderer[] _gamePadDashRenderers;
 
     InputChecker.InputType _currentInputDevice;
 
@@ -37,12 +37,6 @@ public class TutorialDisplayer : MonoBehaviour
 
     void Start()
     {
-        _tutorialBoxBackgroundRenderers = _tutorialBoxBackground.GetComponentsInChildren<Renderer>();
-        _keyboardMoveRenderers = _keyboardMove.GetComponentsInChildren<Renderer>();
-        _keyboardDashRenderers = _keyboardDash.GetComponentsInChildren<Renderer>();
-        _gamePadMoveRenderers = _gamePadMove.GetComponentsInChildren<Renderer>();
-        _gamePadDashRenderers = _gamePadDash.GetComponentsInChildren<Renderer>();
-
         _currentInputDevice = _defaultInputDevice;
     }
 
@@ -53,8 +47,8 @@ public class TutorialDisplayer : MonoBehaviour
     {
         UpdateTimeVariables();
 
-        if((Time.time - _timeOfLastMovement > 2 && !_hasMovedBefore) ||
-            Time.time - _timeOfLastMovement > 10)
+        if((Time.time - _timeOfLastMovement > _firstMoveTutorialAppear && !_hasMovedBefore) ||
+            Time.time - _timeOfLastMovement > _moveTutorialReappear)
         {
             _tutorialBoxBackground.SetActive(true);
             SetTutorialActive(Mechanic.Move);
@@ -62,7 +56,7 @@ public class TutorialDisplayer : MonoBehaviour
         else if(
             !_hasDashedBefore && 
             _timeOfLastMovement == Time.time &&
-            (_hasShownDashTutorial || Time.time - _timeOfLastStandStill > 8f))
+            (_hasShownDashTutorial || Time.time - _timeOfLastStandStill > _MoveDurationUntilDashTutorialAppear))
         {
             _tutorialBoxBackground.SetActive(true);
             SetTutorialActive(Mechanic.Dash);
