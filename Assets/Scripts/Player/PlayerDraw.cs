@@ -57,13 +57,18 @@ public class PlayerDraw : MonoBehaviour
                         _activeSprite = _dashSpriteRef;
                         break;
                 }
-                
+
                 if (_lastMovementState == PlayerMovement.MovementState.Idle || _playerMovementRef.CurrentState == PlayerMovement.MovementState.Idle)
                 {
                     StartCoroutine(SpriteTransition(_previousActiveSprite, _activeSprite, _transitionDuration));
                 }
 
                 _lastMovementState = _playerMovementRef.CurrentState;
+            }
+
+            if (_playerMovementRef.CurrentMovement.sqrMagnitude > 0)
+            {
+                _activeSprite.transform.up = Vector3.Lerp(_activeSprite.transform.up, -_playerMovementRef.CurrentMovement.normalized, 0.8f);
             }
         }
     }

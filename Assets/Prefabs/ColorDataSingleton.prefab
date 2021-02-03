@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 5949925883884442529}
   - component: {fileID: 451563698814720083}
   m_Layer: 0
-  m_Name: DataSingleton
+  m_Name: ColorDataSingleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
