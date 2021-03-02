@@ -31,7 +31,6 @@ public class MetronomeBehave : MonoBehaviour
         if (go) { go=false ;Go();}
         if (curBPM==0){
             CheckBPMchange(now); //from stop always check
-
         }
         int nextxbeat = Mathf.RoundToInt(Mathf.Floor((now-scaleTime)/60*(float)curBPM*16/4))+scaleXBeat;
         if(nextxbeat > xbeat){
