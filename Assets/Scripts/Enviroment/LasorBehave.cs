@@ -6,7 +6,7 @@ public class LasorBehave : MonoBehaviour
 {
     public float countDown = 2;
     public float size = 1;
-    public float timeScale = 1;
+    public float musicSpeedFactor = 1;
     [SerializeField] float attackEnd = -0.5f;
     [SerializeField] AnimationCurve attackIn;
     [SerializeField] GameObject monitor;
@@ -24,7 +24,7 @@ public class LasorBehave : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        countDown -=  timeScale * Time.fixedDeltaTime;
+        countDown -=  musicSpeedFactor * Time.fixedDeltaTime;
         if ( countDown < 0.0f && countDown >= attackEnd){
             attack.SetActive(true);
             float s = countDown / attackEnd;

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenMeteorStorm : MonoBehaviour, IOnBeat, ITimeScale
+public class GenMeteorStorm : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
-    public float timeScale = 1;
+    public float musicSpeedFactor = 1;
     int count = 3;
     //just use a small fast meteor
     [SerializeField]
@@ -36,7 +36,7 @@ public class GenMeteorStorm : MonoBehaviour, IOnBeat, ITimeScale
     public void OnBeat(int c){
         if ( gameObject.activeInHierarchy) {
             var go = Instantiate(meteorPrefab).GetComponent<CMeteorBehave>();
-            go.timeScale=timeScale;
+            go.musicSpeedFactor = musicSpeedFactor;
 
             // random x, y auf Einheitskreis
             float x,y;
@@ -56,7 +56,7 @@ public class GenMeteorStorm : MonoBehaviour, IOnBeat, ITimeScale
             }
         }
     }
-    public void SetTimeScale(float timeScale){
-        this.timeScale = timeScale;
+    public void SetMusicSpeedFactor(float musicSpeedFactor){
+        this.musicSpeedFactor = musicSpeedFactor;
     }
 }

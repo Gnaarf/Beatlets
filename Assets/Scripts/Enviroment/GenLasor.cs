@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenLasor : MonoBehaviour, IOnBeat, ITimeScale
+public class GenLasor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
     [SerializeField] GameObject lasorPrefab= default;
     [SerializeField] Transform beatBoxTransform= default;
     [SerializeField] ClipController clipController = default;
 
     int count;
-    float timeScale = 1;
+    float musicSpeedFactor = 1;
 
     void OnEnable(){
         count = 6;
@@ -24,12 +24,13 @@ public class GenLasor : MonoBehaviour, IOnBeat, ITimeScale
                 gameObject.SetActive(false);
             }
             var go = Instantiate(lasorPrefab).GetComponent<LasorBehave>();
-            go.timeScale=timeScale;
+            go.musicSpeedFactor=musicSpeedFactor;
             go.transform.position = beatBoxTransform.position;
             go.transform.rotation = beatBoxTransform.rotation;
         }
     }
-    public void SetTimeScale(float timeScale){
-        this.timeScale = timeScale;
+    public void SetMusicSpeedFactor(float musicSpeedFactor)
+    {
+        this.musicSpeedFactor = musicSpeedFactor;
     }
 }

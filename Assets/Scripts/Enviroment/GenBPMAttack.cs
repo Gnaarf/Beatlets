@@ -9,7 +9,7 @@ public class GenBPMAttack : MonoBehaviour, IOnBeat
 
     void OnEnable(){
         count = initcount;
-        MetronomeBehave metronome = FindObjectOfType<MetronomeBehave>();
+        Metronome metronome = FindObjectOfType<Metronome>();
         metronome.SetBPM(180);
 //         GetComponent<BeatListener>().wait0=true;
     }
@@ -23,7 +23,7 @@ public class GenBPMAttack : MonoBehaviour, IOnBeat
         }
     }
     void OnDisable(){
-        MetronomeBehave metronome = FindObjectOfType<MetronomeBehave>();
+        Metronome metronome = FindObjectOfType<Metronome>();
         metronome.SetBPM(120);
     }
 

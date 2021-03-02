@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenMeteor : MonoBehaviour, IOnBeat, ITimeScale
+public class GenMeteor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
     [SerializeField]
     GameObject meteorPrefab= default;
@@ -14,7 +14,7 @@ public class GenMeteor : MonoBehaviour, IOnBeat, ITimeScale
 
     [SerializeField] int initcount = 3;
     int count;
-    float timeScale=1;
+    float musicSpeedFactor=1;
 
     void OnEnable(){
         count = initcount;
@@ -25,7 +25,7 @@ public class GenMeteor : MonoBehaviour, IOnBeat, ITimeScale
     public void OnBeat(int c){
         if ( gameObject.activeInHierarchy) {
             var go = Instantiate(meteorPrefab).GetComponent<CMeteorBehave>();
-            go.timeScale=timeScale;
+            go.musicSpeedFactor = musicSpeedFactor;
             go.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * Random.Range(1f,5f);
             if (--count == 0)
             {
@@ -34,8 +34,8 @@ public class GenMeteor : MonoBehaviour, IOnBeat, ITimeScale
             }
         }
     }
-    public void SetTimeScale(float timeScale){
-        this.timeScale = timeScale;
+    public void SetMusicSpeedFactor(float musicSpeedFactor){
+        this.musicSpeedFactor = musicSpeedFactor;
     }
 
 }

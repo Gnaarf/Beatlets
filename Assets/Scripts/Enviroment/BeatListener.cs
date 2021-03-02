@@ -10,14 +10,14 @@ public interface IOnBeat2
 {
     void OnBeat2(int c);
 }
-public interface ITimeScale
+public interface IMusicSpeedFactor
 {
-    void SetTimeScale(float timeScale);
+    void SetMusicSpeedFactor(float musicSpeedFactor);
 }
 public interface IOnCheckBeat
 {
     void OnCheckBeat(int c, int groundbeat);
-    void SetTimeScale(float timeScale);
+    void SetMusicSpeedFactor(float musicSpeedFactor);
 
 }
 
@@ -32,13 +32,13 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
         Sixteenths
     };
     public bool wait0 = false;
-    public float timeScale = 1;
+    public float musicSpeedFactor = 1;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        MetronomeBehave metronome = FindObjectOfType<MetronomeBehave>();
+        Metronome metronome = FindObjectOfType<Metronome>();
         if (metronome != null)
         {
             metronome.beatListeners.Add(GetComponent<IOnCheckBeat>());
@@ -63,10 +63,10 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
             }
         }
     }
-    public void SetTimeScale(float timeScale){
-        this.timeScale = timeScale;
-        foreach(ITimeScale o in GetComponents<ITimeScale>()){
-            o.SetTimeScale(timeScale);
+    public void SetMusicSpeedFactor(float musicSpeedFactor){
+        this.musicSpeedFactor = musicSpeedFactor;
+        foreach(IMusicSpeedFactor o in GetComponents<IMusicSpeedFactor>()){
+            o.SetMusicSpeedFactor(musicSpeedFactor);
         }
     }
     public void Halfs(){
@@ -91,7 +91,7 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
 
     void OnDestroy()
     {
-        MetronomeBehave metronome = FindObjectOfType<MetronomeBehave>();
+        Metronome metronome = FindObjectOfType<Metronome>();
         if (metronome != null)
         {
             metronome.beatListeners.Remove(GetComponent<IOnCheckBeat>());

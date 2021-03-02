@@ -7,7 +7,7 @@ public class CMeteorBehave : MonoBehaviour
 
     public float countDown = 3;
     public float size = 10;
-    public float timeScale = 1;
+    public float musicSpeedFactor = 1;
     [SerializeField] float warnBeginn = 2f;
     [SerializeField] float warnAnimate = 1.5f;
     [SerializeField] float warnEnd = 0.5f;
@@ -26,7 +26,7 @@ public class CMeteorBehave : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        countDown -=  timeScale * Time.fixedDeltaTime;
+        countDown -= musicSpeedFactor * Time.fixedDeltaTime;
         var renderer = GetComponent<SpriteRenderer>();
         var s = 1.0f;
         if ( countDown < warnBeginn && countDown > warnAnimate){

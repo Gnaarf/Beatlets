@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SongManager : MonoBehaviour, IOnBeat, ITimeScale
+public class SongManager : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
     [SerializeField]
-    private MetronomeBehave _metronomeBehave;
+    private Metronome _metronomeBehave;
 
     
     [SerializeField]
@@ -90,12 +90,12 @@ public class SongManager : MonoBehaviour, IOnBeat, ITimeScale
             clipController.OnLoop(_currentLoopCounter);
         }
     }
-    public void SetTimeScale(float timeScale)
+    public void SetMusicSpeedFactor(float musicSpeedFactor)
     {
         foreach (ClipController clipController in _clipList)
         {
             var au=clipController.GetComponent<AudioSource>();
-            au.pitch=timeScale;
+            au.pitch=musicSpeedFactor;
             //print("PP"+au.clip.length);
         }
     }
