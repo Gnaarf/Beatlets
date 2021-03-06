@@ -602,7 +602,7 @@ MonoBehaviour:
   hits: 01000000010000000100000001000000
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &311159774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   hits: 01000000010000000100000001000000
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &359734548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,17 +1295,17 @@ PrefabInstance:
     - target: {fileID: 1751303943896256753, guid: 8084029302045b584b5b67a0a79670b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1751303943896256753, guid: 8084029302045b584b5b67a0a79670b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1751303943896256753, guid: 8084029302045b584b5b67a0a79670b1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3945312
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1751303943896256753, guid: 8084029302045b584b5b67a0a79670b1,
         type: 3}
@@ -1345,7 +1345,7 @@ PrefabInstance:
     - target: {fileID: 1751303943896256754, guid: 8084029302045b584b5b67a0a79670b1,
         type: 3}
       propertyPath: m_Name
-      value: Metronom
+      value: Metronome
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8084029302045b584b5b67a0a79670b1, type: 3}
@@ -1458,7 +1458,7 @@ MonoBehaviour:
   hits: 01000000010000000100000001000000
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &575587959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   hits: 00000000010100000000000000000000
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &578886599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3980,7 +3980,7 @@ MonoBehaviour:
   hits: 00000000000000000101000000000000
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &1172271779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4421,7 +4421,7 @@ MonoBehaviour:
   hits: 01000000010000000100000001000000
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &1227058293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4841,7 +4841,7 @@ MonoBehaviour:
   hits: 01010000000000000000000000000000
   hits2: 00
   wait0: 1
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &1283658681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5133,7 +5133,7 @@ MonoBehaviour:
   hits: 00000000000000000000000001010000
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &1305983259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6574,7 +6574,7 @@ MonoBehaviour:
   hits: 01000000000000000000000000000000
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!82 &1619219429
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7635,7 +7635,7 @@ MonoBehaviour:
   hits: 00010001000100010001000100010001
   hits2: 00
   wait0: 0
-  timeScale: 1
+  musicSpeedFactor: 1
 --- !u!114 &2123018157
 MonoBehaviour:
   m_ObjectHideFlags: 0

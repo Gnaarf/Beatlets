@@ -7,72 +7,57 @@ public class Metronome : MonoBehaviour
     // calculate beats from time
     [SerializeField, Range(30, 240)]
     int BPM = 120;
-    float startTime = 0;
-    float scaleTime = 0;
-    int scaleXBeat = 0;
-    [SerializeField,ReadOnly] int curBPM;
-    [SerializeField,ReadOnly] int xbeat;
-    [SerializeField,ReadOnly] int beat;
+    [SerializeField, Range(1, int.MaxValue)]
+    int notesPerBar = 64;
+    [SerializeField, ReadOnly] int currentBar;
+    [SerializeField, ReadOnly] int currentNoteInBar;
     public List<IOnCheckBeat> beatListeners = new List<IOnCheckBeat>();
-    public bool go=true;
 
-    float musicSpeedFactor => BPM / 120f;
+    float timeTracking;
 
-    void Awake(){
-        startTime = 0;
-    }
-    // Start is called before the first frame update
+    float musicSpeedFactor => BPM / 120f; // assumes a default speed of 120bpm
+
+    float lengthOfSixtyfourthNote => 60f / (BPM * notesPerBar / 4f); // : sec/sixtyfourthnote = sec/min / (quarternotes/min * sixtyfourthnotes/quarternote)
+
     void Start()
     {
-        go = true;
+        currentBar = 0;
+        currentNoteInBar = 0;
+        timeTracking = 0;
     }
 
     void FixedUpdate()
     {
-        float now = Time.fixedTime;
-        if (go) { go=false ;Go();}
-        if (curBPM==0){
-            CheckBPMchange(now); //from stop always check
-        }
-        int nextxbeat = Mathf.RoundToInt(Mathf.Floor((now-scaleTime)/60*(float)curBPM*16/4))+scaleXBeat;
-        if(nextxbeat > xbeat)
-        {
-            xbeat = nextxbeat;
-            beat = xbeat * 4 / 16;
-            foreach(IOnCheckBeat l in beatListeners){
-                l.OnCheckBeat(xbeat,16);
-            }
-            CheckBPMchange(now);
-        }
-    }
+        timeTracking += Time.fixedDeltaTime * musicSpeedFactor;
 
-    private void CheckBPMchange(float now)
-    {
-        if(curBPM != BPM)
+        Debug.Log(timeTracking);
+
+        //should usually only run once. I.e. it should function as an if-clause.
+        while(timeTracking > lengthOfSixtyfourthNote)
         {
-            curBPM = BPM;
-            scaleTime = now;
-            scaleXBeat = xbeat;
-            foreach (IOnCheckBeat l in beatListeners)
+            currentNoteInBar++;
+            timeTracking -= lengthOfSixtyfourthNote;
+            if(currentNoteInBar >= notesPerBar)
             {
-                l.SetMusicSpeedFactor(musicSpeedFactor);
+                currentBar++;
             }
+
+            BeatInfo beatInfo = new BeatInfo(currentBar, currentNoteInBar);
+
+            // ------------ this uses magic numbers. Todo: finish refactor since we changed to 64th notes
+            if (currentNoteInBar % 4 == 0)
+            {
+                foreach (IOnCheckBeat l in beatListeners)
+                {
+                    l.OnCheckBeat(currentNoteInBar / 4, 16);
+                }
+            }
+            // --------------
         }
     }
 
     public void SetBPM(int BPM)
     {
         this.BPM = BPM;
-    }
-
-
-    public void Go()
-    {
-        print("GO - previous StartTime: " + startTime + ", new StartTime: " + Time.fixedTime);
-        xbeat = 0;
-        curBPM = 0;
-        scaleXBeat = xbeat;
-        startTime = Time.fixedTime;
-        scaleTime = startTime;
     }
 }

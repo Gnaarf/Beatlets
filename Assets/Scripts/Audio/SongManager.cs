@@ -37,7 +37,6 @@ public class SongManager : MonoBehaviour, IOnBeat, IMusicSpeedFactor
     {
         _audioSource.clip = _startGameSound;
         _audioSource.Play();
-        _metronomeBehave.Go();
         _baseLine.SetActive(true);
 
     }
