@@ -7,7 +7,7 @@ public class Metronome : MonoBehaviour
     // calculate beats from time
     [SerializeField, Range(30, 240)]
     int BPM = 120;
-    [SerializeField, Range(1, int.MaxValue)]
+    [SerializeField]
     int notesPerBar = 64;
     [SerializeField, ReadOnly] int currentBar;
     [SerializeField, ReadOnly] int currentNoteInBar;
