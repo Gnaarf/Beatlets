@@ -11,12 +11,11 @@ public class Metronome : MonoBehaviour
     int notesPerBar = 64;
     [SerializeField, ReadOnly] int currentBar;
     [SerializeField, ReadOnly] int currentNoteInBar;
-    public List<IOnCheckBeat> beatListeners = new List<IOnCheckBeat>();
 
     float timeTracking;
+    List<IOnCheckBeat> beatListeners = new List<IOnCheckBeat>();
 
     float musicSpeedFactor => BPM / 120f; // assumes a default speed of 120bpm
-
     float lengthOfSixtyfourthNote => 60f / (BPM * notesPerBar / 4f); // : sec/sixtyfourthnote = sec/min / (quarternotes/min * sixtyfourthnotes/quarternote)
 
     void Start()
@@ -30,8 +29,6 @@ public class Metronome : MonoBehaviour
     {
         timeTracking += Time.fixedDeltaTime * musicSpeedFactor;
 
-        Debug.Log(timeTracking);
-
         //should usually only run once. I.e. it should function as an if-clause.
         while(timeTracking > lengthOfSixtyfourthNote)
         {
@@ -40,10 +37,10 @@ public class Metronome : MonoBehaviour
             if(currentNoteInBar >= notesPerBar)
             {
                 currentBar++;
+                currentNoteInBar = 0;
             }
 
             BeatInfo beatInfo = new BeatInfo(currentBar, currentNoteInBar);
-
             // ------------ this uses magic numbers. Todo: finish refactor since we changed to 64th notes
             if (currentNoteInBar % 4 == 0)
             {
@@ -59,5 +56,15 @@ public class Metronome : MonoBehaviour
     public void SetBPM(int BPM)
     {
         this.BPM = BPM;
+    }
+
+    public void RegisterBeatListener(IOnCheckBeat beatListener)
+    {
+        beatListeners.Add(beatListener);
+    }
+
+    public void UnregisterBeatListener(IOnCheckBeat beatListener)
+    {
+        beatListeners.Remove(beatListener);
     }
 }

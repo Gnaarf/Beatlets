@@ -41,7 +41,7 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
         Metronome metronome = FindObjectOfType<Metronome>();
         if (metronome != null)
         {
-            metronome.beatListeners.Add(GetComponent<IOnCheckBeat>());
+            metronome.RegisterBeatListener(GetComponent<IOnCheckBeat>());
         }
         //assing to list
     }
@@ -94,7 +94,7 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
         Metronome metronome = FindObjectOfType<Metronome>();
         if (metronome != null)
         {
-            metronome.beatListeners.Remove(GetComponent<IOnCheckBeat>());
+            metronome.UnregisterBeatListener(GetComponent<IOnCheckBeat>());
         }
     }
 
