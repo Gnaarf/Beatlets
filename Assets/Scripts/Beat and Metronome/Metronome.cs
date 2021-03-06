@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Metronome : MonoBehaviour
 {
-    // calculate beats from time
     [SerializeField, Range(30, 240)]
     int BPM = 120;
     [SerializeField]
@@ -13,7 +12,7 @@ public class Metronome : MonoBehaviour
     [SerializeField, ReadOnly] int currentNoteInBar;
 
     float timeTracking;
-    List<IOnCheckBeat> beatListeners = new List<IOnCheckBeat>();
+    List<BeatListener> beatListeners = new List<BeatListener>();
 
     float musicSpeedFactor => BPM / 120f; // assumes a default speed of 120bpm
     float lengthOfSixtyfourthNote => 60f / (BPM * notesPerBar / 4f); // : sec/sixtyfourthnote = sec/min / (quarternotes/min * sixtyfourthnotes/quarternote)
@@ -44,7 +43,7 @@ public class Metronome : MonoBehaviour
             // ------------ this uses magic numbers. Todo: finish refactor since we changed to 64th notes
             if (currentNoteInBar % 4 == 0)
             {
-                foreach (IOnCheckBeat l in beatListeners)
+                foreach (BeatListener l in beatListeners)
                 {
                     l.OnCheckBeat(currentNoteInBar / 4, 16);
                 }
@@ -58,12 +57,12 @@ public class Metronome : MonoBehaviour
         this.BPM = BPM;
     }
 
-    public void RegisterBeatListener(IOnCheckBeat beatListener)
+    public void RegisterBeatListener(BeatListener beatListener)
     {
         beatListeners.Add(beatListener);
     }
 
-    public void UnregisterBeatListener(IOnCheckBeat beatListener)
+    public void UnregisterBeatListener(BeatListener beatListener)
     {
         beatListeners.Remove(beatListener);
     }

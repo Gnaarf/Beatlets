@@ -4,9 +4,9 @@
 public class BeatInfo
 {
     /// <summary>zero indexed</summary>
-    public int CurrentBar { get; private set; }
+    public readonly int CurrentBar;
     /// <summary>zero indexed</summary>
-    public int SixtyfourthNoteInBar { get; private set; }
+    public readonly int SixtyfourthNoteInBar;
     /// <summary>zero indexed</summary>
     int ThirtysecondNoteInBar => SixtyfourthNoteInBar / 2;
     /// <summary>zero indexed</summary>

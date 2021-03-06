@@ -14,37 +14,24 @@ public interface IMusicSpeedFactor
 {
     void SetMusicSpeedFactor(float musicSpeedFactor);
 }
-public interface IOnCheckBeat
-{
-    void OnCheckBeat(int c, int groundbeat);
-    void SetMusicSpeedFactor(float musicSpeedFactor);
 
-}
-
-public class BeatListener : MonoBehaviour,IOnCheckBeat
+public class BeatListener : MonoBehaviour
 {
     public bool[] hits = new bool[16];
     public bool[] hits2 = new bool[1];
-    enum Style{
-        Halfs,
-        Fourths,
-        Eights,
-        Sixteenths
-    };
     public bool wait0 = false;
     public float musicSpeedFactor = 1;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         Metronome metronome = FindObjectOfType<Metronome>();
         if (metronome != null)
         {
-            metronome.RegisterBeatListener(GetComponent<IOnCheckBeat>());
+            metronome.RegisterBeatListener(this);
         }
-        //assing to list
     }
+
     public void OnCheckBeat(int c, int groundbeat){
         if( wait0 ){
             wait0 = (c % hits.Length != 0);
@@ -94,9 +81,7 @@ public class BeatListener : MonoBehaviour,IOnCheckBeat
         Metronome metronome = FindObjectOfType<Metronome>();
         if (metronome != null)
         {
-            metronome.UnregisterBeatListener(GetComponent<IOnCheckBeat>());
+            metronome.UnregisterBeatListener(GetComponent<BeatListener>());
         }
     }
-
-
 }
