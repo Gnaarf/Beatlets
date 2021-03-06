@@ -24,7 +24,7 @@ public class GenLasor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
                 gameObject.SetActive(false);
             }
             var go = Instantiate(lasorPrefab).GetComponent<LasorBehave>();
-            go.musicSpeedFactor=musicSpeedFactor;
+            go.musicSpeedFactor = musicSpeedFactor;
             go.transform.position = beatBoxTransform.position;
             go.transform.rotation = beatBoxTransform.rotation;
         }
