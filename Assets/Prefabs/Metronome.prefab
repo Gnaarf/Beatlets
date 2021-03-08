@@ -43,9 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e803ca6788ca05963a8a0dc8515de690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BPM: 140
-  curBPM: 0
-  timeScale: 0
-  xbeat: 0
-  beat: 0
-  go: 1
+  _beatInfo:
+    _timeSignature:
+      BeatsPerBar: 4
+      BeatNoteValue: 4
+    _bpm: 120
+    _beatSubdivisions: 16
+    _currentBar: 0
+    _currentBeat: 0
+    _currentBeatSubdivision: 0
+  bpm: 120
+  timeSignature:
+    BeatsPerBar: 4
+    BeatNoteValue: 4
+  beatSubdivisions: 16
+  currentBar: 0
+  currentBeat: 0
+  currentBeatSubdivision: 0

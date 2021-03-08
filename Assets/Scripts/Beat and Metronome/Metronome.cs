@@ -4,48 +4,32 @@ using UnityEngine;
 
 public class Metronome : MonoBehaviour
 {
-    [SerializeField, Range(30, 240)]
-    int BPM = 120;
-    [SerializeField]
-    int notesPerBar = 64;
-    [SerializeField, ReadOnly] int currentBar;
-    [SerializeField, ReadOnly] int currentNoteInBar;
+    [SerializeField] BeatInfo _beatInfo;
 
     float timeTracking;
     List<BeatListener> beatListeners = new List<BeatListener>();
 
-    float musicSpeedFactor => BPM / 120f; // assumes a default speed of 120bpm
-    float lengthOfSixtyfourthNote => 60f / (BPM * notesPerBar / 4f); // : sec/sixtyfourthnote = sec/min / (quarternotes/min * sixtyfourthnotes/quarternote)
-
     void Start()
     {
-        currentBar = 0;
-        currentNoteInBar = 0;
-        timeTracking = 0;
     }
 
     void FixedUpdate()
     {
-        timeTracking += Time.fixedDeltaTime * musicSpeedFactor;
+        timeTracking += Time.fixedDeltaTime * _beatInfo.MusicSpeedFactor;
 
-        //should usually only run once. I.e. it should function as an if-clause.
-        while(timeTracking > lengthOfSixtyfourthNote)
+        //should usually only run once per Update. I.e. it should function as an if-clause.
+        while (timeTracking > _beatInfo.LengthOfBeatSubdivision)
         {
-            currentNoteInBar++;
-            timeTracking -= lengthOfSixtyfourthNote;
-            if(currentNoteInBar >= notesPerBar)
-            {
-                currentBar++;
-                currentNoteInBar = 0;
-            }
+            timeTracking -= _beatInfo.LengthOfBeatSubdivision;
 
-            BeatInfo beatInfo = new BeatInfo(currentBar, currentNoteInBar);
+            _beatInfo.AdvanceBySubbeat();
+
             // ------------ this uses magic numbers. Todo: finish refactor since we changed to 64th notes
-            if (currentNoteInBar % 4 == 0)
+            if (_beatInfo.CurrentBeatSubdivision % 4 == 0)
             {
                 foreach (BeatListener l in beatListeners)
                 {
-                    l.OnCheckBeat(currentNoteInBar / 4, 16);
+                    l.OnCheckBeat(_beatInfo.CurrentBeat * 4 + _beatInfo.CurrentBeatSubdivision / 4, 16);
                 }
             }
             // --------------
@@ -54,7 +38,7 @@ public class Metronome : MonoBehaviour
 
     public void SetBPM(int BPM)
     {
-        this.BPM = BPM;
+        _beatInfo.BPM = BPM;
     }
 
     public void RegisterBeatListener(BeatListener beatListener)
