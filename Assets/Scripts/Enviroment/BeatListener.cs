@@ -2,14 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IOnBeat
-{
-    void OnBeat(int c, BeatInfo beatInfo);
-}
-public interface IMusicSpeedFactor
-{
-    void SetMusicSpeedFactor(float musicSpeedFactor);
-}
 
 public class BeatListener : MonoBehaviour
 {

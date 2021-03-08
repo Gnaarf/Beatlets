@@ -7876,10 +7876,6 @@ PrefabInstance:
       propertyPath: m_firstOverflowCharacterIndex
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 1641595964, guid: a3593ebad76d60645a806e8979482f43, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1641595969, guid: a3593ebad76d60645a806e8979482f43, type: 3}
       propertyPath: _scoreText
       value: 
