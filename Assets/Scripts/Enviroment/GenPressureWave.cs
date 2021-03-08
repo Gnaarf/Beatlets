@@ -19,7 +19,7 @@ public class GenPressureWave : MonoBehaviour, IOnBeat
         clipController.SetActive(true);
     }
 
-    public void OnBeat(int c)
+    public void OnBeat(int c, BeatInfo beatInfo)
     {
         if (measureStarted == false)
         {

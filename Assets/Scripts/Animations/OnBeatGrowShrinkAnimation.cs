@@ -27,7 +27,7 @@ public class OnBeatGrowShrinkAnimation : MonoBehaviour, IOnBeat
         _startScale = transform.localScale;
     }
 
-    public void OnBeat(int c)
+    public void OnBeat(int c, BeatInfo beatInfo)
     {
         if(_type == GrowShrinkType.Alternate)
         {

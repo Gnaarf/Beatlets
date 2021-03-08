@@ -75,7 +75,7 @@ public class SongManager : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 
     }
 
-    public void OnBeat(int c)
+    public void OnBeat(int c, BeatInfo beatInfo)
     {
         // next loop started
         // _baseLine.AudioSource.time = 0;

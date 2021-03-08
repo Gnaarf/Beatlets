@@ -33,7 +33,8 @@ public class GenMeteorStorm : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 
     }
 
-    public void OnBeat(int c){
+    public void OnBeat(int c, BeatInfo beatInfo)
+    {
         if ( gameObject.activeInHierarchy) {
             var go = Instantiate(meteorPrefab).GetComponent<CMeteorBehave>();
             go.musicSpeedFactor = musicSpeedFactor;

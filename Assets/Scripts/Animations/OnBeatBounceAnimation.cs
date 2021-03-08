@@ -26,7 +26,7 @@ public class OnBeatBounceAnimation : MonoBehaviour, IOnBeat
         _startPosition = transform.localPosition;
     }
 
-    public void OnBeat(int c)
+    public void OnBeat(int c, BeatInfo beatInfo)
     {
         if (!evenBeatCount)
         {

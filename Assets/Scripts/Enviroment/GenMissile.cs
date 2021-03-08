@@ -22,7 +22,8 @@ public class GenMissile : MonoBehaviour, IOnBeat
     }
 
     // Update is called once per frame
-    public void OnBeat(int c){
+    public void OnBeat(int c, BeatInfo beatInfo)
+    {
         if (measureStarted == false)
         {
             BeatListener beatListener = GetComponent<BeatListener>();

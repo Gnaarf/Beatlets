@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press A to start again!
+  m_text: 'Press DASH to start again!
 
 '
   m_isRightToLeft: 0
@@ -443,7 +443,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 480.6, y: 262.7}
+  m_SizeDelta: {x: 686, y: 262.7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1953245681
 CanvasRenderer:
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 400
+  m_fontSize: 290
   m_fontSizeBase: 400
   m_fontWeight: 400
   m_enableAutoSizing: 0

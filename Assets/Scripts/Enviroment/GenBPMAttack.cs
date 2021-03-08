@@ -14,7 +14,8 @@ public class GenBPMAttack : MonoBehaviour, IOnBeat
 //         GetComponent<BeatListener>().wait0=true;
     }
 
-    public void OnBeat(int c){
+    public void OnBeat(int c, BeatInfo beatInfo)
+    {
         if ( gameObject.activeInHierarchy) {
             if (--count == 0)
             {

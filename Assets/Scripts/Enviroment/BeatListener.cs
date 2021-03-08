@@ -4,11 +4,7 @@ using UnityEngine;
 
 public interface IOnBeat
 {
-    void OnBeat(int c);
-}
-public interface IOnBeat2
-{
-    void OnBeat2(int c);
+    void OnBeat(int c, BeatInfo beatInfo);
 }
 public interface IMusicSpeedFactor
 {
@@ -18,7 +14,6 @@ public interface IMusicSpeedFactor
 public class BeatListener : MonoBehaviour
 {
     public bool[] hits = new bool[16];
-    public bool[] hits2 = new bool[1];
     public bool wait0 = false;
     public float musicSpeedFactor = 1;
 
@@ -32,22 +27,16 @@ public class BeatListener : MonoBehaviour
         }
     }
 
-    public void OnCheckBeat(int c, int groundbeat){
+    public void OnCheckBeat(int c, int groundbeat, BeatInfo beatInfo){
         if( wait0 ){
             wait0 = (c % hits.Length != 0);
             if( wait0 ) return;
         }
         if( hits[c % hits.Length]){
             foreach(IOnBeat o in GetComponents<IOnBeat>()){
-                o.OnBeat(c);
+                o.OnBeat(c, beatInfo);
             }
 
-        }
-        if( hits2[c % hits2.Length]){
-            foreach(IOnBeat2 o in GetComponents<IOnBeat2>()){
-                o.OnBeat2(c);
-
-            }
         }
     }
     public void SetMusicSpeedFactor(float musicSpeedFactor){

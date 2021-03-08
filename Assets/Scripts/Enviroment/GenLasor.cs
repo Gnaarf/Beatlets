@@ -17,7 +17,8 @@ public class GenLasor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
         clipController.SetActive(true);
     }
 
-    public void OnBeat(int c){
+    public void OnBeat(int c, BeatInfo beatInfo)
+    {
         if ( gameObject.activeInHierarchy ) {
             if ( --count <= 0 ) {
                 clipController.SetActive(false);

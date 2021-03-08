@@ -22,7 +22,8 @@ public class GenMeteor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
         clipController.SetActive(true);
     }
 
-    public void OnBeat(int c){
+    public void OnBeat(int c, BeatInfo beatInfo)
+    {
         if ( gameObject.activeInHierarchy) {
             var go = Instantiate(meteorPrefab).GetComponent<CMeteorBehave>();
             go.musicSpeedFactor = musicSpeedFactor;

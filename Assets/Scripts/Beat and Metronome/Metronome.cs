@@ -29,7 +29,7 @@ public class Metronome : MonoBehaviour
             {
                 foreach (BeatListener l in beatListeners)
                 {
-                    l.OnCheckBeat(_beatInfo.CurrentBeat * 4 + _beatInfo.CurrentBeatSubdivision / 4, 16);
+                    l.OnCheckBeat(_beatInfo.CurrentBeat * 4 + _beatInfo.CurrentBeatSubdivision / 4, 16, _beatInfo);
                 }
             }
             // --------------
