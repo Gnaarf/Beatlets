@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LasorBehave : MonoBehaviour
+public class Lasor : MonoBehaviour
 {
     public float countDown = 2;
     public float size = 1;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Metorbehave : MonoBehaviour
+public class Meteor : MonoBehaviour
 {
     public float size;
     public float speed;

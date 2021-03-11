@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenLasor3 : MonoBehaviour, IOnBeat, IMusicSpeedFactor
+public class LasorGenerator2 : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
     [SerializeField] GameObject lasorPrefab= default;
     [SerializeField] Transform beatBoxTransform= default;
     [SerializeField] ClipController clipController = default;
 
-    [SerializeField] int initcount = 4;
+    [SerializeField] int initcount = 8;
     int count;
     float dir;
     float rndOffset;
@@ -24,20 +24,19 @@ public class GenLasor3 : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 
     public void OnBeat(int c, BeatInfo beatInfo)
     {
-        if ( gameObject.activeInHierarchy) {
+        if ( gameObject.activeInHierarchy ) {
             if ( --count == 0 ) {
                 clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
-            var go = Instantiate(lasorPrefab).GetComponent<LasorBehave>();
+            var go = Instantiate(lasorPrefab).GetComponent<Lasor>();
             go.musicSpeedFactor=musicSpeedFactor;
             float move = 3.0f * dir *((float) count - (float) initcount/2f + (float) rndOffset);
-            go.transform.position = beatBoxTransform.position +  move * Vector3.up ;
-            go.transform.up = Vector3.right;
+            go.transform.position = beatBoxTransform.position +  move * Vector3.right ;
+            go.transform.up = Vector3.up ;
         }
     }
-    public void SetMusicSpeedFactor(float musicSpeedFactor)
-    {
+    public void SetMusicSpeedFactor(float musicSpeedFactor){
         this.musicSpeedFactor = musicSpeedFactor;
     }
 }

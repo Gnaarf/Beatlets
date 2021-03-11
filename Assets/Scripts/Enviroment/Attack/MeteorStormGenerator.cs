@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenMeteorStorm : MonoBehaviour, IOnBeat, IMusicSpeedFactor
+public class MeteorStormGenerator : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
     public float musicSpeedFactor = 1;
     int count = 3;
@@ -36,7 +36,7 @@ public class GenMeteorStorm : MonoBehaviour, IOnBeat, IMusicSpeedFactor
     public void OnBeat(int c, BeatInfo beatInfo)
     {
         if ( gameObject.activeInHierarchy) {
-            var go = Instantiate(meteorPrefab).GetComponent<CMeteorBehave>();
+            var go = Instantiate(meteorPrefab).GetComponent<CMeteor>();
             go.musicSpeedFactor = musicSpeedFactor;
 
             // random x, y auf Einheitskreis

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HMissileBehave : MonoBehaviour
+public class HomingMissile : MonoBehaviour
 {   [SerializeField,Range(0,10)]
     float speed = 1f;
     public float countDown = 3f;

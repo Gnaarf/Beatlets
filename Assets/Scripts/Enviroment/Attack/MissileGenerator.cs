@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenMissile : MonoBehaviour, IOnBeat
+public class MissileGenerator : MonoBehaviour, IOnBeat
 {
     int count;
     [SerializeField]
@@ -33,7 +33,7 @@ public class GenMissile : MonoBehaviour, IOnBeat
 
         if ( gameObject.activeInHierarchy && measureStarted){
             var missile = Instantiate(missilePrefab);
-            var b = missile.GetComponent<MissileBehave>();
+            var b = missile.GetComponent<Missile>();
             b.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * 0.5f;
             b.transform.rotation = beatBoxTransform.rotation;
             if (--count == 0)

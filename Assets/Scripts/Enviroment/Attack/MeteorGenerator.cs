@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenMeteor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
+public class MeteorGenerator : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
     [SerializeField]
     GameObject meteorPrefab= default;
@@ -25,7 +25,7 @@ public class GenMeteor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
     public void OnBeat(int c, BeatInfo beatInfo)
     {
         if ( gameObject.activeInHierarchy) {
-            var go = Instantiate(meteorPrefab).GetComponent<CMeteorBehave>();
+            var go = Instantiate(meteorPrefab).GetComponent<CMeteor>();
             go.musicSpeedFactor = musicSpeedFactor;
             go.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * Random.Range(1f,5f);
             if (--count == 0)

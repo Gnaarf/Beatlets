@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenLasor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
+public class LasorGenerator : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
     [SerializeField] GameObject lasorPrefab= default;
     [SerializeField] Transform beatBoxTransform= default;
@@ -24,7 +24,7 @@ public class GenLasor : MonoBehaviour, IOnBeat, IMusicSpeedFactor
                 clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
-            var go = Instantiate(lasorPrefab).GetComponent<LasorBehave>();
+            var go = Instantiate(lasorPrefab).GetComponent<Lasor>();
             go.musicSpeedFactor = musicSpeedFactor;
             go.transform.position = beatBoxTransform.position;
             go.transform.rotation = beatBoxTransform.rotation;

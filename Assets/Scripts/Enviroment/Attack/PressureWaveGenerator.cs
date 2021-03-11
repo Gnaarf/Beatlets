@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenPressureWave : MonoBehaviour, IOnBeat
+public class PressureWaveGenerator : MonoBehaviour, IOnBeat
 {
     [SerializeField] GameObject pressureWavePrefab= default;
     [SerializeField] Transform beatBoxTransform= default;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiralMineBehave : MonoBehaviour
+public class SpiralMine : MonoBehaviour
 {
     [SerializeField] AnimationCurve animationCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 1));
     [SerializeField] int mineCount = 40;

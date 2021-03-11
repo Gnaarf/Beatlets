@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CMeteorBehave : MonoBehaviour
+public class CMeteor : MonoBehaviour
 {
 
     public float countDown = 3;
