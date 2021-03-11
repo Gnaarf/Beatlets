@@ -17,7 +17,7 @@ public class BeatInfo
     public TimeSignature TimeSignature => _timeSignature;
     /// <summary>Beats Per Minute</summary>
     public int BPM { get => _bpm; set => _bpm = value; }
-    /// <summary>How many subdivisions are considered</summary>
+    /// <summary>How often BeatInfo gets updated per Beat</summary>
     public int BeatSubdivisions => _beatSubdivisions;
     /// <summary>zero indexed. Ever increasing since song started</summary>
     public int CurrentBar => _currentBar;
@@ -25,6 +25,9 @@ public class BeatInfo
     public int CurrentBeatInBar => _currentBeatInBar;
     /// <summary>zero indexed [0, BeatSubdivisions]</summary>
     public int CurrentSubdivisionInBeat => _currentSubdivisionInBeat;
+
+    public bool NewBarJustStarted => _currentBeatInBar == 0 && _currentSubdivisionInBeat == 0;
+    public bool NewBeatJustStarted => _currentSubdivisionInBeat == 0;
 
     /// <summary>assumes a default speed of 120bpm</summary>
     public float MusicSpeedFactor => _bpm / 120f;
