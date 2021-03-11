@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MissileGenerator : MonoBehaviour, IOnBeat
 {
-    int count;
     [SerializeField]
     GameObject missilePrefab= default;
     [SerializeField]
@@ -13,35 +12,38 @@ public class MissileGenerator : MonoBehaviour, IOnBeat
     [SerializeField]
     ClipController clipController;
 
-    bool measureStarted;
+    [SerializeField] int _missilesPerBeat = 4;
+    [SerializeField] float _durationInBeats = 8;
 
-    void OnEnable(){
-        count = 32;
-        measureStarted = false;
+    bool barStarted;
+    int misslesFiredSinceEnabled;
+
+    void OnEnable()
+    {
+        barStarted = false;
+        misslesFiredSinceEnabled = 0;
         clipController.SetActive(true);
     }
 
     // Update is called once per frame
     public void OnBeat(int c, BeatInfo beatInfo)
     {
-        if (measureStarted == false)
+        if(!barStarted && beatInfo.NewBarJustStarted)
         {
-            BeatListener beatListener = GetComponent<BeatListener>();
-            measureStarted = c % beatListener.hits.Length == 0;
+            barStarted = true;
         }
-
-
-        if ( gameObject.activeInHierarchy && measureStarted){
-            var missile = Instantiate(missilePrefab);
-            var b = missile.GetComponent<Missile>();
-            b.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * 0.5f;
-            b.transform.rotation = beatBoxTransform.rotation;
-            if (--count == 0)
+        
+        if (gameObject.activeInHierarchy && barStarted && beatInfo.CurrentSubdivisionInBeat % (beatInfo.BeatSubdivisions / _missilesPerBeat) == 0)
+        {
+            var missile = Instantiate(missilePrefab).GetComponent<Missile>();
+            missile.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * 0.5f;
+            missile.transform.rotation = beatBoxTransform.rotation;
+            misslesFiredSinceEnabled++;
+            if (misslesFiredSinceEnabled >= _durationInBeats * _missilesPerBeat)
             {
                 clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
-
         }
     }
 }

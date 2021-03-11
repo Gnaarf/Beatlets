@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 4681169502191401819, guid: 9a8c2caf61727a6049f51fb81cacf234,
         type: 3}
       propertyPath: m_Name
-      value: LasorGen
+      value: LasorGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 4681169502191401819, guid: 9a8c2caf61727a6049f51fb81cacf234,
         type: 3}
@@ -468,7 +468,7 @@ PrefabInstance:
     - target: {fileID: 3221470236561394982, guid: 21e62b519b45f482983b47ef69e1ee10,
         type: 3}
       propertyPath: m_Name
-      value: MeteorGen
+      value: MeteorGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 3221470236561394982, guid: 21e62b519b45f482983b47ef69e1ee10,
         type: 3}
@@ -1726,7 +1726,7 @@ PrefabInstance:
     - target: {fileID: 5263145457163354747, guid: cc43b57815114eadfb8befb2c6eb0c27,
         type: 3}
       propertyPath: m_Name
-      value: MissileGen
+      value: MissileGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 5263145457163354747, guid: cc43b57815114eadfb8befb2c6eb0c27,
         type: 3}
@@ -3182,7 +3182,7 @@ PrefabInstance:
     - target: {fileID: 2960890573915740778, guid: 8e75b1f6f9d2aff45b011e41225c9700,
         type: 3}
       propertyPath: m_Name
-      value: LasorGen3
+      value: LasorGenerator3
       objectReference: {fileID: 0}
     - target: {fileID: 2960890573915740783, guid: 8e75b1f6f9d2aff45b011e41225c9700,
         type: 3}
@@ -6913,7 +6913,7 @@ PrefabInstance:
     - target: {fileID: 4062005556054807053, guid: 63b11e38efbe769b49e186aaef977601,
         type: 3}
       propertyPath: m_Name
-      value: LasorGen2
+      value: LasorGenerator2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b11e38efbe769b49e186aaef977601, type: 3}
