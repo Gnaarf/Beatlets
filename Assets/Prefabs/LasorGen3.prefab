@@ -48,7 +48,9 @@ MonoBehaviour:
     type: 3}
   beatBoxTransform: {fileID: 0}
   clipController: {fileID: 0}
-  initcount: 8
+  _lasorCount: 8
+  _arenaRadius: 10
+  _lasorOrientation: 0
 --- !u!114 &2960890573915740776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,4 +64,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hits: 01000000010000000100000001000000
-  hits2: 00
+  wait0: 0
+  musicSpeedFactor: 1

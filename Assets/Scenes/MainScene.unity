@@ -3131,6 +3131,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960890573915740777, guid: 8e75b1f6f9d2aff45b011e41225c9700,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960890573915740777, guid: 8e75b1f6f9d2aff45b011e41225c9700,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.45665
       objectReference: {fileID: 0}
@@ -3186,12 +3191,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960890573915740783, guid: 8e75b1f6f9d2aff45b011e41225c9700,
         type: 3}
+      propertyPath: _lasorPrefab
+      value: 
+      objectReference: {fileID: 4323945967587619189, guid: 52e202210f7aa364da4f2dc172e2bad3,
+        type: 3}
+    - target: {fileID: 2960890573915740783, guid: 8e75b1f6f9d2aff45b011e41225c9700,
+        type: 3}
       propertyPath: clipController
       value: 
       objectReference: {fileID: 989026476}
     - target: {fileID: 2960890573915740783, guid: 8e75b1f6f9d2aff45b011e41225c9700,
         type: 3}
+      propertyPath: _clipController
+      value: 
+      objectReference: {fileID: 989026476}
+    - target: {fileID: 2960890573915740783, guid: 8e75b1f6f9d2aff45b011e41225c9700,
+        type: 3}
       propertyPath: beatBoxTransform
+      value: 
+      objectReference: {fileID: 1559866303}
+    - target: {fileID: 2960890573915740783, guid: 8e75b1f6f9d2aff45b011e41225c9700,
+        type: 3}
+      propertyPath: _beatBoxTransform
       value: 
       objectReference: {fileID: 1559866303}
     m_RemovedComponents: []

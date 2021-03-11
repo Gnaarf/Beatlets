@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class LasorGenerator3 : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
-    [SerializeField] GameObject lasorPrefab= default;
-    [SerializeField] Transform beatBoxTransform= default;
-    [SerializeField] ClipController clipController = default;
+    [SerializeField] GameObject _lasorPrefab= default;
+    [SerializeField] Transform _beatBoxTransform= default;
+    [SerializeField] ClipController _clipController = default;
 
     [SerializeField] int _lasorCount = 8;
-    [SerializeField] float _arenaRadius = 20;
+    [SerializeField] float _arenaRadius = 10;
     [SerializeField] Orientation _lasorOrientation = Orientation.Horizontal;
     
     int _lasorsFiredSinceEnabled;
-    float dir;
-    float rndOffset;
-    float musicSpeedFactor=1;
+    float _direction;
+    float _rndOffset;
+    float _musicSpeedFactor = 1;
 
     public enum Orientation
     {
@@ -23,32 +23,41 @@ public class LasorGenerator3 : MonoBehaviour, IOnBeat, IMusicSpeedFactor
         Vertical,
     }
 
-    void OnEnable(){
-        _lasorsFiredSinceEnabled = _lasorCount;
-        GetComponent<BeatListener>().wait0=true;
-        dir = ( Random.value > 0.5 )? -1f:1f;
-        rndOffset = Random.Range(-1f,2f);
-        clipController.SetActive(true);
+    void OnEnable()
+    {
+        _lasorsFiredSinceEnabled = 0;
+        GetComponent<BeatListener>().wait0 = true;
+        _direction = (Random.value > 0.5) ? -1f : 1f;
+        _rndOffset = Random.Range(-0.5f, 0.5f) * DistanceBetweenLasors();
+        _clipController.SetActive(true);
     }
 
     public void OnBeat(int c, BeatInfo beatInfo)
     {
         if ( gameObject.activeInHierarchy && beatInfo.NewBeatJustStarted)
         {
-            if ( --_lasorsFiredSinceEnabled == 0 ) 
+            var lasor = Instantiate(_lasorPrefab).GetComponent<Lasor>();
+            lasor.musicSpeedFactor = _musicSpeedFactor;
+            float move = _direction * (_arenaRadius - _lasorsFiredSinceEnabled * DistanceBetweenLasors()) + _rndOffset;
+            lasor.transform.position = _beatBoxTransform.position + move * (_lasorOrientation == Orientation.Horizontal ? Vector3.up : Vector3.right);
+            lasor.transform.up = _lasorOrientation == Orientation.Horizontal ? Vector3.right : Vector3.up;
+
+            _lasorsFiredSinceEnabled++;
+            if(_lasorsFiredSinceEnabled >= _lasorCount)
             {
-                clipController.SetActive(false);
+                _clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
-            var lasor = Instantiate(lasorPrefab).GetComponent<Lasor>();
-            lasor.musicSpeedFactor=musicSpeedFactor;
-            float move = 3.0f * dir *((float) _lasorsFiredSinceEnabled - (float) _lasorCount/2f + (float) rndOffset);
-            lasor.transform.position = beatBoxTransform.position +  move * Vector3.up ;
-            lasor.transform.up = Vector3.right;
         }
     }
+
     public void SetMusicSpeedFactor(float musicSpeedFactor)
     {
-        this.musicSpeedFactor = musicSpeedFactor;
+        this._musicSpeedFactor = musicSpeedFactor;
+    }
+
+    private float DistanceBetweenLasors()
+    {
+        return _arenaRadius * 2f / (_lasorCount - 1);
     }
 }
