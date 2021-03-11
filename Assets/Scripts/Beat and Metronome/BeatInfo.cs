@@ -11,18 +11,20 @@ public class BeatInfo
     [SerializeField] int _beatSubdivisions = 16;
 
     [SerializeField, ReadOnly] int _currentBar = 0;
-    [SerializeField, ReadOnly] int _currentBeat = 0;
-    [SerializeField, ReadOnly] int _currentBeatSubdivision = 0;
+    [SerializeField, ReadOnly] int _currentBeatInBar = 0;
+    [SerializeField, ReadOnly] int _currentSubdivisionInBeat = 0;
 
     public TimeSignature TimeSignature => _timeSignature;
     /// <summary>Beats Per Minute</summary>
-    public int BPM { get { return _bpm; } set { _bpm = value; } }
+    public int BPM { get => _bpm; set => _bpm = value; }
+    /// <summary>How many subdivisions are considered</summary>
+    public int BeatSubdivisions => _beatSubdivisions;
     /// <summary>zero indexed</summary>
     public int CurrentBar => _currentBar;
-    /// <summary>zero indexed</summary>
-    public int CurrentBeat => _currentBeat;
-    /// <summary>zero indexed</summary>
-    public int CurrentBeatSubdivision => _currentBeatSubdivision;
+    /// <summary>zero indexed. min value: 0, max value: see TimeSignature.BeatsPerBar</summary>
+    public int CurrentBeatInBar => _currentBeatInBar;
+    /// <summary>zero indexed [0, . min value</summary>
+    public int CurrentSubdivisionInBeat => _currentSubdivisionInBeat;
 
     /// <summary>assumes a default speed of 120bpm</summary>
     public float MusicSpeedFactor => _bpm / 120f;
@@ -53,21 +55,21 @@ public class BeatInfo
         _beatSubdivisions = beatSubdivisions;
 
         _currentBar = currentBar;
-        _currentBeat = currentBeat;
-        _currentBeatSubdivision = currentBeatSubdivision;
+        _currentBeatInBar = currentBeat;
+        _currentSubdivisionInBeat = currentBeatSubdivision;
     }
 
     public void AdvanceBySubbeat()
     {
-        _currentBeatSubdivision++;
-        if (_currentBeatSubdivision >= _beatSubdivisions)
+        _currentSubdivisionInBeat++;
+        if (_currentSubdivisionInBeat >= _beatSubdivisions)
         {
-            _currentBeat++;
-            _currentBeatSubdivision = 0;
-            if (_currentBeat >= _timeSignature.BeatsPerBar)
+            _currentBeatInBar++;
+            _currentSubdivisionInBeat = 0;
+            if (_currentBeatInBar >= _timeSignature.BeatsPerBar)
             {
                 _currentBar++;
-                _currentBeat = 0;
+                _currentBeatInBar = 0;
             }
         }
     }

@@ -25,11 +25,11 @@ public class Metronome : MonoBehaviour
             _beatInfo.AdvanceBySubbeat();
 
             // ------------ this uses magic numbers. Todo: finish refactor since we changed to 64th notes
-            if (_beatInfo.CurrentBeatSubdivision % 4 == 0)
+            if (_beatInfo.CurrentSubdivisionInBeat % 4 == 0)
             {
                 foreach (BeatListener l in beatListeners)
                 {
-                    l.OnCheckBeat(_beatInfo.CurrentBeat * 4 + _beatInfo.CurrentBeatSubdivision / 4, 16, _beatInfo);
+                    l.OnCheckBeat(_beatInfo.CurrentBeatInBar * 4 + _beatInfo.CurrentSubdivisionInBeat / 4, 16, _beatInfo);
                 }
             }
             // --------------
