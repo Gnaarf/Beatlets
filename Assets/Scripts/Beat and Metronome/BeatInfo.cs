@@ -19,11 +19,11 @@ public class BeatInfo
     public int BPM { get => _bpm; set => _bpm = value; }
     /// <summary>How many subdivisions are considered</summary>
     public int BeatSubdivisions => _beatSubdivisions;
-    /// <summary>zero indexed</summary>
+    /// <summary>zero indexed. Ever increasing since song started</summary>
     public int CurrentBar => _currentBar;
-    /// <summary>zero indexed. min value: 0, max value: see TimeSignature.BeatsPerBar</summary>
+    /// <summary>zero indexed: [0, TimeSignature.BeatsPerBar]</summary>
     public int CurrentBeatInBar => _currentBeatInBar;
-    /// <summary>zero indexed [0, . min value</summary>
+    /// <summary>zero indexed [0, BeatSubdivisions]</summary>
     public int CurrentSubdivisionInBeat => _currentSubdivisionInBeat;
 
     /// <summary>assumes a default speed of 120bpm</summary>
