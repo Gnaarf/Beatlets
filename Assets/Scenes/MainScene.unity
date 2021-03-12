@@ -203,12 +203,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4681169502191401821, guid: 9a8c2caf61727a6049f51fb81cacf234,
         type: 3}
+      propertyPath: _lasorPrefab
+      value: 
+      objectReference: {fileID: 4323945967587619189, guid: 52e202210f7aa364da4f2dc172e2bad3,
+        type: 3}
+    - target: {fileID: 4681169502191401821, guid: 9a8c2caf61727a6049f51fb81cacf234,
+        type: 3}
       propertyPath: clipController
       value: 
       objectReference: {fileID: 1783696154}
     - target: {fileID: 4681169502191401821, guid: 9a8c2caf61727a6049f51fb81cacf234,
         type: 3}
+      propertyPath: _clipController
+      value: 
+      objectReference: {fileID: 1783696154}
+    - target: {fileID: 4681169502191401821, guid: 9a8c2caf61727a6049f51fb81cacf234,
+        type: 3}
       propertyPath: beatBoxTransform
+      value: 
+      objectReference: {fileID: 1559866303}
+    - target: {fileID: 4681169502191401821, guid: 9a8c2caf61727a6049f51fb81cacf234,
+        type: 3}
+      propertyPath: _beatBoxTransform
       value: 
       objectReference: {fileID: 1559866303}
     m_RemovedComponents: []
