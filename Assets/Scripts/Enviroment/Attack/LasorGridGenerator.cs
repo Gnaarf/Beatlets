@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class LasorGridGenerator : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
-    [SerializeField] GameObject _lasorPrefab= default;
-    [SerializeField] Transform _beatBoxTransform= default;
+    [SerializeField] GameObject _lasorPrefab = default;
+    [SerializeField] Transform _beatBoxTransform = default;
     [SerializeField] ClipController _clipController = default;
 
     [SerializeField] int _lasorCount = 8;
     [SerializeField] float _arenaRadius = 10;
     [SerializeField] Orientation _lasorOrientation = Orientation.Horizontal;
-    
+
     int _lasorsFiredSinceEnabled;
     float _direction;
     float _rndOffset;
@@ -34,7 +34,7 @@ public class LasorGridGenerator : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 
     public void OnBeat(int c, BeatInfo beatInfo)
     {
-        if ( gameObject.activeInHierarchy && beatInfo.NewBeatJustStarted)
+        if (gameObject.activeInHierarchy && beatInfo.NewBeatJustStarted)
         {
             var lasor = Instantiate(_lasorPrefab).GetComponent<Lasor>();
             lasor.musicSpeedFactor = _musicSpeedFactor;
@@ -43,7 +43,7 @@ public class LasorGridGenerator : MonoBehaviour, IOnBeat, IMusicSpeedFactor
             lasor.transform.up = _lasorOrientation == Orientation.Horizontal ? Vector3.right : Vector3.up;
 
             _lasorsFiredSinceEnabled++;
-            if(_lasorsFiredSinceEnabled >= _lasorCount)
+            if (_lasorsFiredSinceEnabled >= _lasorCount)
             {
                 _clipController.SetActive(false);
                 gameObject.SetActive(false);
