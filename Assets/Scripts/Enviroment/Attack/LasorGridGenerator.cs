@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LasorGenerator3 : MonoBehaviour, IOnBeat, IMusicSpeedFactor
+public class LasorGridGenerator : MonoBehaviour, IOnBeat, IMusicSpeedFactor
 {
     [SerializeField] GameObject _lasorPrefab= default;
     [SerializeField] Transform _beatBoxTransform= default;

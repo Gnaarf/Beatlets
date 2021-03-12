@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4062005556054807053
+--- !u!1 &2960890573915740778
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4062005556054807040}
-  - component: {fileID: 4062005556054807043}
-  - component: {fileID: 4062005556054807042}
+  - component: {fileID: 2960890573915740777}
+  - component: {fileID: 2960890573915740776}
+  - component: {fileID: 2960890573915740783}
   m_Layer: 0
-  m_Name: LasorGen2
+  m_Name: LasorGen3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &4062005556054807040
+--- !u!4 &2960890573915740777
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4062005556054807053}
+  m_GameObject: {fileID: 2960890573915740778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.45665, y: -0.8589525, z: -4.245511}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,34 +32,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4062005556054807043
+--- !u!114 &2960890573915740776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4062005556054807053}
+  m_GameObject: {fileID: 2960890573915740778}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28d104fe76eb57630bdf7de258d83c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hits: 01000000010000000100000001000000
-  hits2: 00
---- !u!114 &4062005556054807042
+  wait0: 0
+  musicSpeedFactor: 1
+--- !u!114 &2960890573915740783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4062005556054807053}
+  m_GameObject: {fileID: 2960890573915740778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65303f22808abf557b17ce25b0db0dd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 60a4b726d59961f31a4a9f874aa52a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lasorPrefab: {fileID: 4323945967587619189, guid: 52e202210f7aa364da4f2dc172e2bad3,
-    type: 3}
-  beatBoxTransform: {fileID: 0}
-  clipController: {fileID: 0}
-  initcount: 8
+  _lasorPrefab: {fileID: 0}
+  _beatBoxTransform: {fileID: 0}
+  _clipController: {fileID: 0}
+  _lasorCount: 8
+  _arenaRadius: 10
+  _lasorOrientation: 0
