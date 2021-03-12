@@ -1821,12 +1821,28 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5263145457163354745, guid: cc43b57815114eadfb8befb2c6eb0c27,
         type: 3}
+      propertyPath: _missilePrefab
+      value: 
+      objectReference: {fileID: 3154907664390081498, guid: b8650e88363c9da039d4c88c7f8b0e03,
+        type: 3}
+    - target: {fileID: 5263145457163354745, guid: cc43b57815114eadfb8befb2c6eb0c27,
+        type: 3}
       propertyPath: clipController
       value: 
       objectReference: {fileID: 1594898177}
     - target: {fileID: 5263145457163354745, guid: cc43b57815114eadfb8befb2c6eb0c27,
         type: 3}
+      propertyPath: _clipController
+      value: 
+      objectReference: {fileID: 1594898177}
+    - target: {fileID: 5263145457163354745, guid: cc43b57815114eadfb8befb2c6eb0c27,
+        type: 3}
       propertyPath: beatBoxTransform
+      value: 
+      objectReference: {fileID: 1559866303}
+    - target: {fileID: 5263145457163354745, guid: cc43b57815114eadfb8befb2c6eb0c27,
+        type: 3}
+      propertyPath: _beatBoxTransform
       value: 
       objectReference: {fileID: 1559866303}
     - target: {fileID: 5263145457163354747, guid: cc43b57815114eadfb8befb2c6eb0c27,

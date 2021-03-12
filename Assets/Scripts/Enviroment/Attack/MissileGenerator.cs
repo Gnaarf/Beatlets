@@ -5,43 +5,43 @@ using UnityEngine;
 public class MissileGenerator : MonoBehaviour, IOnBeat
 {
     [SerializeField]
-    GameObject missilePrefab= default;
+    GameObject _missilePrefab = default;
     [SerializeField]
-    Transform beatBoxTransform= default;
+    Transform _beatBoxTransform = default;
 
     [SerializeField]
-    ClipController clipController;
+    ClipController _clipController;
 
     [SerializeField] int _missilesPerBeat = 4;
     [SerializeField] float _durationInBeats = 8;
 
-    bool barStarted;
-    int misslesFiredSinceEnabled;
+    bool _barStarted;
+    int _misslesFiredSinceEnabled;
 
     void OnEnable()
     {
-        barStarted = false;
-        misslesFiredSinceEnabled = 0;
-        clipController.SetActive(true);
+        _barStarted = false;
+        _misslesFiredSinceEnabled = 0;
+        _clipController.SetActive(true);
     }
 
     // Update is called once per frame
     public void OnBeat(int c, BeatInfo beatInfo)
     {
-        if(!barStarted && beatInfo.NewBarJustStarted)
+        if(!_barStarted && beatInfo.NewBarJustStarted)
         {
-            barStarted = true;
+            _barStarted = true;
         }
         
-        if (gameObject.activeInHierarchy && barStarted && beatInfo.CurrentSubdivisionInBeat % (beatInfo.BeatSubdivisions / _missilesPerBeat) == 0)
+        if (gameObject.activeInHierarchy && _barStarted && beatInfo.CurrentSubdivisionInBeat % (beatInfo.BeatSubdivisions / _missilesPerBeat) == 0)
         {
-            var missile = Instantiate(missilePrefab).GetComponent<Missile>();
-            missile.transform.position = beatBoxTransform.position + beatBoxTransform.transform.up * 0.5f;
-            missile.transform.rotation = beatBoxTransform.rotation;
-            misslesFiredSinceEnabled++;
-            if (misslesFiredSinceEnabled >= _durationInBeats * _missilesPerBeat)
+            var missile = Instantiate(_missilePrefab).GetComponent<Missile>();
+            missile.transform.position = _beatBoxTransform.position + _beatBoxTransform.transform.up * 0.5f;
+            missile.transform.rotation = _beatBoxTransform.rotation;
+            _misslesFiredSinceEnabled++;
+            if (_misslesFiredSinceEnabled >= _durationInBeats * _missilesPerBeat)
             {
-                clipController.SetActive(false);
+                _clipController.SetActive(false);
                 gameObject.SetActive(false);
             }
         }
